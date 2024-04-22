@@ -15,9 +15,9 @@
 		public Champion(int championID, string name, string ability, string desc, Enum difficulty)
 		{
 			ChampionID = championID;
-			Name = name;
+			ChampName = name;
 			Ability = ability;
-			Desc = desc;
+			ChampDesc = desc;
 			Difficulty = difficulty;
 		}
 	}
