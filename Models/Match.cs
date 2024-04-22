@@ -16,6 +16,8 @@
         public Enum SSpells { get; set; } 
         public int Minions { get; set; }
 
+        // Måske vi skal lave MatchDate, så man kan søge på en dag. og se hvor mange matches man har taget den dag
+
         public Match(int matchID, bool winProcent, int kills, int deaths, int assists, double kDA, int visionscore, Enum laneType, Enum items, Enum champions, Enum runes, Enum sSpells, int minions)
         {
             MatchID = matchID;
