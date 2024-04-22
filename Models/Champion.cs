@@ -7,9 +7,9 @@
 		}
 
 		public int ChampionID { get; set; }
-        public string Name { get; set; }
+        public string ChampName { get; set; }
         public string Ability { get; set; }
-        public string Desc { get; set; }
+        public string ChampDesc { get; set; }
         public Enum Difficulty { get; set; }
 
 		public Champion(int championID, string name, string ability, string desc, Enum difficulty)
