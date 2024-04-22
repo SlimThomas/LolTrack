@@ -7,6 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSingleton<UserService, UserService>();
+builder.Services.AddSingleton<ItemService, ItemService>();
+builder.Services.AddSingleton<ChampService, ChampService>();
+builder.Services.AddSingleton<RuneService, RuneService>();
+builder.Services.AddSingleton<SSpellService, SSpellService>();
+builder.Services.AddSingleton<PlayerService, PlayerService>();
+builder.Services.AddSingleton<MatchService, MatchService>();
 
 builder.Services.Configure<CookiePolicyOptions>(options => {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request. options.CheckConsentNeeded = context => true;
