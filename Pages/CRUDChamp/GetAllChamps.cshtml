@@ -2,3 +2,70 @@
 @model LolTrack.Pages.CRUDChamp.GetAllChampsModel
 @{
 }
+
+<h1>Champions</h1>
+<div class="row">
+    <div class="col-7"><h5>Search</h5></div>
+</div>
+
+<div class="row">
+    <div class="col-4">
+        <form method="post" class="form-inline">
+            <div class="input-group mb-3">
+                <input asp-for="Search" class="form-control mr-1" placeholder="Enter Search"/>
+                <input type="submit" asp-page-handler="ChampSearch" value="Search" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
+<table class="table-bordered table-hover table-striped table-opacity" width="60%">
+    <thead>
+        <tr class="d-flex justify-content-between p-0">
+            <th>
+                <div class="d-flex justify-content-between p-0">
+                    <div>
+                        <h5>Champion Name</h5>
+                    </div>
+                    <div>
+                        <a data-toggle="tooltip" title="Sort By Name" asp-page-handler="SortByName"><i class="fa fa-angle-up"></i></a>
+                        <a data-toggle="tooltip" title="Sort By Name Descending" asp-page-handler="SortByNameDescending"><i class="fade fa-angle-down"></i></a>
+                    </div>
+                </div>
+            </th>
+            <th>
+                <h5>Search</h5>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Champions != null)
+        {
+            foreach (var champ in Model.Champions)
+            {
+                <tr class="btn-secondary">
+                    <td>
+                        @champ.ChampName
+                    </td>
+                    <td>
+                        @champ.Ability
+                    </td>
+                    <td>
+                        @champ.ChampDesc
+                    </td>
+                    <td>
+                        @champ.Difficulty
+                    </td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditChamp" asp-route-id="@champ.ChampionID"><i class="fade fa-edit"></i></a>
+
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<p>
+    <a class="btn btn-primary" asp-page="CreateChamp"> Create Champion </a>
+</p>
