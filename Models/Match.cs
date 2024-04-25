@@ -3,7 +3,7 @@
     public class Match
     {
         public int MatchID { get; set; }
-        public bool WinProcent { get; set; }
+        public bool Win { get; set; }
         public int Kills { get; set; }
         public int Deaths { get; set; }
         public int Assists { get; set; }
@@ -18,10 +18,10 @@
 
         // Måske vi skal lave MatchDate, så man kan søge på en dag. og se hvor mange matches man har taget den dag
 
-        public Match(int matchID, bool winProcent, int kills, int deaths, int assists, double kDA, int visionscore, Enum laneType, Enum items, Enum champions, Enum runes, Enum sSpells, int minions)
+        public Match(int matchID, bool win, int kills, int deaths, int assists, double kDA, int visionscore, Enum laneType, Enum items, Enum champions, Enum runes, Enum sSpells, int minions)
         {
             MatchID = matchID;
-            WinProcent = winProcent;
+            Win = win;
             Kills = kills;
             Deaths = deaths;
             Assists = assists;

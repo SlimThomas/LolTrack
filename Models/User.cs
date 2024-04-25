@@ -15,11 +15,11 @@ namespace LolTrack.Models
         [Required]
         public string Password { get; set; }
 
-        public User(string userName, string passwrod)
+        public User(string userName, string password)
         {
             
             UserName = userName;
-            Passwrod = passwrod;
+            Password = password;
         }
 
         public User() 
