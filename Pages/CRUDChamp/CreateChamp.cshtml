@@ -5,20 +5,29 @@
 
 <form method="post">
     <div class="form-group">
+        <label asp-for="@Model.champion.ChampionID" class="control-lable"></label>
+        <input asp-for="@Model.champion.ChampionID" class="form-control" />
+        <span asp-validation-for="@Model.champion.ChampionID" class="text-danger"></span>
+    </div>
+    <div class="form-group">
         <label asp-for="@Model.champion.ChampName" class="control-lable"></label>
         <input asp-for="@Model.champion.ChampName" class="form-control"/>
+        <span asp-validation-for="@Model.champion.ChampName" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="@Model.champion.Ability" class="control-lable"></label>
         <input asp-for="@Model.champion.Ability" class="form-control"/>
+        <span asp-validation-for="@Model.champion.Ability" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="@Model.champion.ChampDesc" class="control-lable"></label>
         <input asp-for="@Model.champion.ChampDesc" class="form-control" />
+        <span asp-validation-for="@Model.champion.ChampDesc" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="@Model.champion.Difficulty" class="control-lable"></label>
         <input asp-for="@Model.champion.Difficulty" class="form-control" />
+        <span asp-validation-for="@Model.champion.Difficulty" class="text-danger"></span>
     </div>
 
     <div class="form-group">

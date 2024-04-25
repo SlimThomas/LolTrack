@@ -11,10 +11,9 @@ namespace LolTrack.Pages.CRUDChamp
         private ChampService _champservice;
         private IWebHostEnvironment webHostEnvironment;
 
-        public CreateChampModel(ChampService champservice, IWebHostEnvironment webHost)
+        public CreateChampModel(ChampService champservice)
         {
             _champservice = champservice;
-            webHostEnvironment = webHost;
         }
         [BindProperty]
         public Models.Champion champion { get; set; }
