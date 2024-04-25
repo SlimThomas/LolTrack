@@ -13,9 +13,20 @@ namespace LolTrack.Services
             _SSpells = MockSSpell.GetMockSSpells();
         }
 
-        public List<SSpell> GetSSPells()
+        public List<SSpell> GetSspells()
         {
             return _SSpells;
+        }
+        public SSpell GetSSpell(int id)
+        {
+            foreach (SSpell sspell in _SSpells)
+            {
+                if (sspell.SSpellID == id)
+                {
+                    return sspell; 
+                }
+            }
+            return null; 
         }
 
         public void AddSSpell(SSpell sspell)
