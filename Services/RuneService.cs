@@ -32,6 +32,10 @@ namespace LolTrack.Services
                 }
             }
         }
+        public List<Rune> GetRunes()
+        {
+            return _runes;
+        }
 
         public Rune GetRune(int runeid)
         {
