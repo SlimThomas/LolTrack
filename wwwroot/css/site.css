@@ -18,5 +18,20 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-image: url('Images/SummonersRift4K-Index.jpeg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+}
+
+.bgIndex {
+    /*background-image: url('Images/SummonersRift.jpg');*/
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover;
+    /*margin: auto; */
+    
 }
