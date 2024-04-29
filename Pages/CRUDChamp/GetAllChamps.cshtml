@@ -58,7 +58,7 @@
                     </td>
                     <td>
                         <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditChamp" asp-route-id="@champ.ChampionID"><i class="fade fa-edit"></i></a>
-
+                        <a class="btn btn-primary btn sm" type="button" title="Detail" asp-page="DetailItem" asp-route-id="@champ.ChampionID"><i class="fa fa-info"></i></a>
                     </td>
                 </tr>
             }
@@ -69,3 +69,14 @@
 <p>
     <a class="btn btn-primary" asp-page="CreateChamp"> Create Champion </a>
 </p>
+@if (Model.Champions != null)
+        {
+            foreach (var champ in Model.Champions)
+            {
+<a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditChamp" asp-route-id="@champ.ChampionID"><i class="fade fa-edit"></i></a>
+<a class="btn btn-primary btn sm" type="button" title="Detail" asp-page="DetailItem" asp-route-id="@champ.ChampionID"><i class="fa fa-info"></i></a>
+            }
+        }
+@* <a data-toggle="tooltip" title="Sort By Name" asp-page-handler="SortByName"><i class="fa fa-angle-up"></i></a>
+<a data-toggle="tooltip" title="Sort By Name Descending" asp-page-handler="SortByNameDescending"><i class="fade fa-angle-down"></i></a>
+ *@

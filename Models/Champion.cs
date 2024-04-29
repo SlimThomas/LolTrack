@@ -11,15 +11,16 @@
         public string Ability { get; set; }
         public string ChampDesc { get; set; }
         public string Difficulty { get; set; }
-        //public string ChampSplash { get; set; }
+        public string ChampSplash { get; set; }
 
-        public Champion(int championID, string name, string ability, string desc, string difficulty)
+        public Champion(int championID, string name, string ability, string desc, string difficulty, string splash)
 		{
 			ChampionID = championID;
 			ChampName = name;
 			Ability = ability;
 			ChampDesc = desc;
 			Difficulty = difficulty;
+			ChampSplash = splash;
 		}
 	}
 }
