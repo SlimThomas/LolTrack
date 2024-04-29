@@ -30,8 +30,9 @@
             <div class="container">
                 <h4><b>@champ.ChampName</b></h4>
             </div>
+            <a class="btn btn-primary btn sm" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champ.ChampionID"><i class="fa fa-info"></i></a>
         </div>
-        <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditChamp" asp-route-id="@champ.ChampionID"><i class="fade fa-edit"></i></a>
+        @* <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditChamp" asp-route-id="@champ.ChampionID"><i class="fade fa-edit"></i></a> *@
         <a class="btn btn-primary btn sm" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champ.ChampionID"><i class="fa fa-info"></i></a>
     }
 }
