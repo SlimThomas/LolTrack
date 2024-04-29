@@ -2,10 +2,15 @@
 @model LolTrack.Pages.CRUDChamp.ChampDetailModel
 @{
 }
-<div class="card" style="width: 18rem">
-    <div class="card-body">
-        <img  src="/Images/@Model.champion.ChampSplash" class="card-img-top" alt="..." />
-        <h5 class="card-title">Card Title</h5>
-        <p class="card-text">Picture of Item</p>
-    </div>
+
+<div class="bg-image-blur">
+    <div class="bgsplash"></div>
+</div>
+<div class="bg-text">
+    <h1>@Model.champion.ChampName</h1>
+    <p>@Model.champion.Difficulty</p>
+    <b>@Model.champion.Ability</b>
+    <p>@Model.champion.ChampDesc</p>
+    <a class="backbtn" type="button" title="back" asp-page="GetAllChamps">Go Back</a>
+</div>
 </div>

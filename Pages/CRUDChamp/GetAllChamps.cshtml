@@ -2,7 +2,7 @@
 @model LolTrack.Pages.CRUDChamp.GetAllChampsModel
 @{
 }
-
+<div class="body"></div>
 <h1>Champions</h1>
 <div class="row">
     <div class="col-7"><h5>Search</h5></div>
@@ -25,15 +25,13 @@
 {
     foreach (var champ in Model.Champions)
     {
-        <div class="card" style="width: 25rem">
-            <img src="/Images/@champ.ChampSplash" alt="Avatar" style="width: auto 100%">
-            <div class="container">
-                <h4><b>@champ.ChampName</b></h4>
+        <div class="splashcontainer">
+            <img src="/Images/@champ.ChampSplash" alt="Avatar" class="splash" style="width: 100%">
+            <div class="splashmiddle">
+                    <a class="backbtn" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champ.ChampionID">@champ.ChampName</a>
             </div>
-            <a class="btn btn-primary btn sm" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champ.ChampionID"><i class="fa fa-info"></i></a>
         </div>
         @* <a class="btn btn-primary btn-sm" type="button" title="Edit" asp-page="EditChamp" asp-route-id="@champ.ChampionID"><i class="fade fa-edit"></i></a> *@
-        <a class="btn btn-primary btn sm" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champ.ChampionID"><i class="fa fa-info"></i></a>
     }
 }
 <p>

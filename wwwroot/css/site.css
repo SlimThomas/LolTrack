@@ -8,52 +8,11 @@ html {
   }
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
 html {
   position: relative;
   min-height: 100%;
 }
 
-
-
 body {
-    background-image: url('Images/SummonersRift4K-Index.jpeg');
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: auto;
-}
-
-.bgIndex {
-    /*background-image: url('Images/SummonersRift.jpg');*/
-    height: 100%; 
-    background-position: center;
-    background-repeat: no-repeat; 
-    background-size: cover;
-    /*margin: auto; */
-    
-}
-
-<<<<<<< Updated upstream
-splash {
-    width: 18rem;
-    height: 100%;
-=======
-
-.pButton  {
-    border: none;
-    background: none; 
-    padding: 0; 
-    height: 50px;
-    width: 1px;
-    
-
-}
-.pButton:focus {
-    outline: none
->>>>>>> Stashed changes
+  margin-bottom: 60px;
 }
