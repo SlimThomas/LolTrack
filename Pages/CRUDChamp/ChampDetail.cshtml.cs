@@ -22,7 +22,7 @@ namespace LolTrack.Pages.CRUDChamp
             {
                 return RedirectToPage("/NotFound");//NotFound er ikke defineret endnu
             }
-            return RedirectToPage("GetAllChamps");
+            return Page();
         }
     }
 }

@@ -14,6 +14,8 @@ namespace LolTrack.Pages.CRUDChamp
 			_champservice = champservice;
 		}
 
+        [BindProperty]
+        public Champion champion { get; set; }
         public List<Champion> Champions { get; private set; }
         [BindProperty]
         public string Search { get; set; }
