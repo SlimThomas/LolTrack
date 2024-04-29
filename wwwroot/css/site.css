@@ -17,6 +17,8 @@ html {
   min-height: 100%;
 }
 
+
+
 body {
     background-image: url('Images/SummonersRift4K-Index.jpeg');
     height: 100%;
@@ -36,7 +38,22 @@ body {
     
 }
 
+<<<<<<< Updated upstream
 splash {
     width: 18rem;
     height: 100%;
+=======
+
+.pButton  {
+    border: none;
+    background: none; 
+    padding: 0; 
+    height: 50px;
+    width: 1px;
+    
+
+}
+.pButton:focus {
+    outline: none
+>>>>>>> Stashed changes
 }
