@@ -142,3 +142,14 @@
     opacity: 1;
     transition: 0s
 }
+.custom-navbar {
+    background-color: #1e2d24ff; 
+}
+.nav-link {
+    margin-right: 10px; 
+    border: none !important; 
+     
+}
+.dropdown-toggle {
+    margin-right: 100px !important; 
+}
