@@ -14,6 +14,7 @@ namespace LolTrack.Pages.LogIn
     {
         // public static User LoggedInUser { get; set; } = null;
         private UserService _userService;
+
         [BindProperty]
         public string UserName { get; set; }
         [BindProperty, DataType(DataType.Password)]
@@ -39,15 +40,17 @@ namespace LolTrack.Pages.LogIn
                 if (UserName == user.UserName)
                 {
                     var passwordHasher = new PasswordHasher<string>();
+
                     if (passwordHasher.VerifyHashedPassword(null, user.Password, Password) == PasswordVerificationResult.Success)
                     {
                         // LoggedInUser = user;
                         var claims = new List<Claim> { new Claim(ClaimTypes.Name, UserName) };
+
                         if (UserName == "admin") claims.Add(new Claim(ClaimTypes.Role, "admin")); 
 
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                        return RedirectToPage(); // Her skal der indsættes den side vi vil referere til
+                        return RedirectToPage("/Index"); 
 
                     }
                     

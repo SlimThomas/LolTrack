@@ -1,15 +1,20 @@
-﻿using LolTrack.Models;
+﻿using LolTrack.MockData;
+using LolTrack.Models;
 using System.Runtime.CompilerServices;
 
 namespace LolTrack.Services
 {
     public class UserService
     {
-        public List<User> _users { get; set; } 
+        public List<User> _users { get; } 
 
-        // Lav en konstruktor, når der er lavet Json eller DB
+        public UserService()
+        {
+            _users = MockUser.GetMockUser(); 
 
-        public void AddUser (User user)
+        }
+
+        public async Task AddUserAsync (User user)
         {
             _users.Add(user); 
         }
