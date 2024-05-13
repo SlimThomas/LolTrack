@@ -9,9 +9,13 @@ namespace LolTrack.Pages.LogIn
     {
         public async Task<IActionResult> OnGet()
         {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToPage("/index"); 
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+                return RedirectToPage("/index");
+            }
+            return RedirectToPage("/LogIn/LogInPage"); // Redirect to login page if not logged in
         }
-        
+
     }
 }
