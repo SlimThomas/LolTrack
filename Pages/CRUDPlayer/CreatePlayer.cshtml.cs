@@ -15,6 +15,7 @@ namespace LolTrack.Pages.CRUDPlayer
         }
         [BindProperty]
         public Player player { get; set; }
+        public Champion champion { get; set; }
 
         public IActionResult OnGet()
         {

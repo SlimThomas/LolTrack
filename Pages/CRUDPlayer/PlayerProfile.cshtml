@@ -1,0 +1,77 @@
+﻿@page
+@model LolTrack.Pages.CRUDPlayer.PlayerProfileModel
+@{
+}
+<div class="bg-image-blur">
+    <div class="bgsplash"></div>
+</div>
+<table class="bg-text">
+    <thead>
+        <tc>
+            <th>
+                <div>
+                    <div><h1>Name</h1></div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <div><p>Total Wins</p></div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <div><b>Win Percentage</b></div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <div><p>KDA</p></div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <div><p>Total Matches Played</p></div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <div><p>Total Losses</p></div>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <div><p>Average Vision Score</p></div>
+                </div>
+            </th>
+        </tc>
+    </thead>
+    <tbody>
+        @if(Model.player != null)
+        {
+            <tc class="btn-secondary">
+                <td>
+                    <h1>@Model.player.PlayerName</h1>
+                </td>
+                <td>
+                    <p>@Model.player.TotalWins</p>
+                <td>
+                    <b>@Model.player.WinPerC</b>
+                </td>
+                <td>
+                    <p>@Model.player.KDA</p>
+                </td>
+                <td>
+                    <p>@Model.player.TotalMatch</p>
+                </td>
+                <td>
+                    <p>@Model.player.TotalLosses</p>
+                </td>
+                <td>
+
+                    <p>@Model.player.AvgVision</p>
+                </td>
+            </tc>
+        }
+    </tbody>
+</table>
+<a class="backbtn" type="button" title="back" asp-page="GetAllPlayers">Go Back</a>

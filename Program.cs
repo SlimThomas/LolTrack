@@ -13,6 +13,7 @@ builder.Services.AddSingleton<RuneService, RuneService>();
 builder.Services.AddSingleton<SSpellService, SSpellService>();
 builder.Services.AddSingleton<PlayerService, PlayerService>();
 builder.Services.AddSingleton<MatchService, MatchService>();
+builder.Services.AddSingleton<AbilityService, AbilityService>();
 
 builder.Services.Configure<CookiePolicyOptions>(options => {
     // This lambda determines whether user consent for non-essential cookies is needed for a given request. options.CheckConsentNeeded = context => true;

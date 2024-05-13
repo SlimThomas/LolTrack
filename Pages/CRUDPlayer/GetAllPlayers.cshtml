@@ -2,3 +2,40 @@
 @model LolTrack.Pages.CRUDPlayer.GetAllPlayersModel
 @{
 }
+<div class="bg-image-blur">
+    <div class="bgsplash"></div>
+</div>
+<head>
+    <h1>Players</h1>
+</head>
+<table class="bg-text">
+    <thead>
+        <tr class="btn-secondary active">
+            <th>
+                <div><h1>Player Name</h1></div>
+            </th>
+            <th>
+                <div><p>Win Percentage</p></div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@if (Model.players != null)
+{
+    foreach(var plr in Model.players)
+    {
+        <tr class="btn-secondary">
+            <td>
+                @plr.PlayerName
+            </td>
+            <td>
+                @plr.WinPerC
+            </td>
+            <td>
+                <a class="backbtn" type="button" asp-page="PlayerProfile" asp-route-id="@plr.PlayerID">Go to Player</a>
+            </td>
+        </tr>
+    }
+}
+    </tbody>
+</table>

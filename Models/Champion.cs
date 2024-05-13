@@ -12,6 +12,7 @@
         public string ChampDesc { get; set; }
         public string Difficulty { get; set; }
         public string ChampSplash { get; set; }
+        public Ability ability { get; set; }
 
         public Champion(int championID, string name, string ability, string desc, string difficulty, string splash)
 		{

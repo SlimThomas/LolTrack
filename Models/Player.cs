@@ -12,9 +12,10 @@
         public double AvgVision { get; set; }
         public Match MostPlayedChamp { get; set; }
         public Match MostPlayedLane { get; set; }
+		public Match match { get; set; }
 
 		public Player(int playerID, int totalWins, string playerName, double winPerC, double kDA, int totalMatch, 
-			int totalLosses, double avgVision, Match mostPlayedChamp, Match mostPlayedLane)
+			int totalLosses, double avgVision/*, Match mostPlayedChamp, Match mostPlayedLane*/)
 		{
 			PlayerID = playerID;
 			PlayerName = playerName;
@@ -24,8 +25,8 @@
 			TotalMatch = totalMatch;
 			TotalLosses = totalLosses;
 			AvgVision = avgVision;
-			MostPlayedChamp = mostPlayedChamp;
-			MostPlayedLane = mostPlayedLane;
+			//MostPlayedChamp = mostPlayedChamp;
+			//MostPlayedLane = mostPlayedLane;
 		}
 
 		public Player()
