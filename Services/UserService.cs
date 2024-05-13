@@ -11,7 +11,7 @@ namespace LolTrack.Services
 
         public void AddUser (User user)
         {
-            _users.Add(user);
+            _users.Add(user); 
         }
 
         public User GetUserByUsername (string username)
