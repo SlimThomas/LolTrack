@@ -44,29 +44,6 @@
 <p>
     <a class="btn-primary" asp-page="CreateChamp"> Create Champion </a>
 </p>
-
-
-@if (Model.Champions != null)
-{
-        <div class="row">
-            @foreach (var champs in Model.Champions)
-            {
-                <div class="column">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                        <img src="/Images/@champs.ChampSplash" alt="Avatar" class="splash" style="width: 100%">
-                        </div>
-                        <div class="flip-card-back">
-                            <h1>@champs.ChampName</h1>
-                                    <a class="backbtn" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champs.ChampionID">More Info</a>
-                        </div>
-                    </div>
-                </div>
-                </div>
-            }
-        </div>
-}
 <style>
     .column{
         -ms-flex: 25%;

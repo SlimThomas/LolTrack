@@ -33,18 +33,6 @@
         Resolve,
         Inspiration
     }
-    public enum SSpells
-    {
-        Flash,
-        Ignite,
-        Teleport,
-        Heal,
-        Ghost,
-        Barrier,
-        Exhaust,
-        Smite,
-        Cleanse
-    }
 
     public class Match
     {

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using LolTrack.Models;
+using LolTrack.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace LolTrack.Pages
@@ -6,6 +8,8 @@ namespace LolTrack.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        [BindProperty]
+        public string SearchStr { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -15,6 +19,10 @@ namespace LolTrack.Pages
         public void OnGet()
         {
 
+        }
+        public void OnPost(string sch)
+        {
+            SearchStr = sch;
         }
     }
 }

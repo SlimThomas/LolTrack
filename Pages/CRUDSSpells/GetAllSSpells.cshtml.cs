@@ -9,9 +9,11 @@ namespace LolTrack.Pages.CRUDSSpells
     {
         private SSpellService _sspellservice;
         public List<SSpell> sspells { get; set; }
+        [BindProperty]
+        public SSpell SSpell { get; set; }
         public GetAllSSpellsModel(SSpellService sSpellService)
         {
-            this._sspellservice = sSpellService;
+            _sspellservice = sSpellService;
         }
         public void OnGet()
         {

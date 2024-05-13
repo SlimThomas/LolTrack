@@ -25,6 +25,14 @@ namespace LolTrack.Services
 			}
 			return null;
 		}
+		public Player GetPlayerName(string id)
+		{
+			foreach (Player player in _players)
+			{
+				if(player.PlayerName == id) return player;
+			}
+			return null;
+		}
 
 		public void UpdatePlayer(Player player)
 		{
@@ -57,8 +65,12 @@ namespace LolTrack.Services
 			return playerToBeDeleted;
 		}
 
-		public List<Player> GetPlayers() { return _players; }
-		public IEnumerable<Player> PlayerNameSearch(string str)
+		public List<Player> GetPlayers() 
+		{
+			return _players; 
+		}
+
+		public IEnumerable<Player> PlayerSearch(string str)
 		{
 			var NameSearchQuery = from p in _players
 								  where p.PlayerName.Contains(str)
