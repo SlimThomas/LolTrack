@@ -6,6 +6,21 @@
     background-size: cover;
     margin: auto;
 }*/
+
+body {
+    height: 1500px;
+    position: relative;
+}
+
+footer {
+    position: absolute;
+    background: linear-gradient(#486144ff, #374f44ff);
+    bottom: 0;
+    height: 80px;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -324,7 +339,7 @@ label[for='UserName'], label[for='Password'] {
 .column4 {
     -ms-flex: 25%;
     flex: 25%;
-    padding: 0 4px;
+    padding: 0 4px; 
 }
 
     .column img {
@@ -398,3 +413,39 @@ label[for='UserName'], label[for='Password'] {
     padding-right: 0;  
 }
 */
+
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to multiple lines */
+    justify-content: center; /* Center the cards horizontally */
+    align-items: flex-start; /* Align the cards to the top */
+    margin: 0px; /* Negative margin to counteract the padding on columns */
+}
+}
+.card-img {
+    width: 100%; /* Ensures the image covers the card width */
+    height: auto; /* Auto height to maintain aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area nicely */
+}
+.card-body {
+    padding: 10px 16px;
+}
+.card-title {
+    font-size: 20px; /* Large text for the title */
+    color: #28b2c1; /* Dark grey color for text */
+}
+.card-text {
+    color: #efdc9e; /* Slightly lighter text for the description */
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.column4.spell-column {
+    flex: 1 1 calc(25% - 20px); /* Adjust the percentage to control the number of columns */
+    box-sizing: border-box;
+    padding: 10px;
+    max-width: calc(25% - 20px);
+}
+
+
