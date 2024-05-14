@@ -5,25 +5,25 @@
 <head>
     <h1>Champions</h1>
 </head>
+<body>
 <div class="row">
     <div class="col-7"><h5>Search</h5></div>
 </div>
-
 <div class="row">
     <div class="col-4">
         <form method="post" class="form-inline">
             <div class="input-group mb-3">
                 <input asp-for="Search" class="form-control mr-1" placeholder="Enter Search"/>
-                <input type="submit" asp-page-handler="ChampSearch" value="Search" class="btn btn-primary"/>
+                <input type="submit" asp-page-handler="ChampSearch" value="Search" class="backbtn" onclick="column1"/>
             </div>
         </form>
     </div>
     <div class="col-3"></div>
 </div>
-<a data-toggle="tooltip" title="Sort By Name" asp-page-handler="SortByName"><i class="fa fa-angle-up"></i></a>
-<a data-toggle="tooltip" title="Sort By Name Descending" asp-page-handler="SortByNameDescending"><i class="fade fa-angle-down"></i></a>
+<a data-toggle="tooltip" title="Sort By Name" asp-page-handler="SortByName">A-Z</a>
+<a data-toggle="tooltip" title="Sort By Name Descending" asp-page-handler="SortByNameDesc">Z-A</a>
 
-@if (Model.Champions != null)
+@* @if (Model.Champions != null)
 {
     {
         <div class="row">
@@ -40,7 +40,28 @@
                 }
         </div>
     }
-}
+} *@
+    <div class="container mx-auto mt-4">
+<div class="row">
+@if (Model.Champions != null)
+    {
+        <div class="row">
+                @foreach (var champs in Model.Champions)
+                {
+                    <div class="column4">
+                        <div class="splashcontainer">
+                            <img src="/Images/@champs.ChampSplash" alt="Avatar" class="splash" style="width: 100%">
+                            <div class="splashmiddle">
+                                <a class="backbtn" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champs.ChampionID">@champs.ChampName</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+        </div>
+    }
+    </div>
+    </div>
+</body>
 <p>
     <a class="btn-primary" asp-page="CreateChamp"> Create Champion </a>
 </p>

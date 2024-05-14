@@ -13,6 +13,9 @@ namespace LolTrack.Pages.CRUDPlayer
             _playerService = playerService;
         }
         public Player player { get; set; }
+        public List<Player> players { get; set; }
+        [BindProperty]
+        public string Search { get; set; }
         public IActionResult OnGet(int id)
         {
             player = _playerService.GetPlayer(id);
@@ -20,6 +23,12 @@ namespace LolTrack.Pages.CRUDPlayer
             {
                 return RedirectToPage("/NotFound");//NotFound er ikke defineret endnu
             }
+            return Page();
+        }
+
+        public IActionResult OnPostPlayerSearch()
+        {
+            players = _playerService.PlayerSearch(Search).ToList();
             return Page();
         }
     }

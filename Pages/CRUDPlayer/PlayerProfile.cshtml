@@ -2,9 +2,6 @@
 @model LolTrack.Pages.CRUDPlayer.PlayerProfileModel
 @{
 }
-<div class="bg-image-blur">
-    <div class="bgsplash"></div>
-</div>
 <table class="bg-text">
     <thead>
         <tc>
@@ -70,9 +67,9 @@
 
                     <p>@Model.player.AvgVision</p>
                 </td>
+                <a class="backbtn" type="button" title="back" asp-page="PlayerCompare" asp-route-id="@Model.player.PlayerID">Compare with another player</a>
             </tc>
         }
     </tbody>
 </table>
-
 <a class="backbtn" type="button" title="back" asp-page="GetAllPlayers">Go Back</a>
