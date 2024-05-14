@@ -311,9 +311,14 @@ label[for='UserName'], label[for='Password'] {
         background-color: #364e36;
     }
 
-.column {
+.column3 {
     -ms-flex: 33.33%;
     flex: 33.33%;
+    padding: 0 4px;
+}
+.column4 {
+    -ms-flex: 25%;
+    flex: 25%;
     padding: 0 4px;
 }
 
@@ -330,8 +335,8 @@ label[for='UserName'], label[for='Password'] {
 
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     perspective: 1000px;
 }
 
