@@ -34,7 +34,6 @@ namespace LolTrack.Services
 					{
 						c.ChampDesc = champ.ChampDesc;
 						c.ChampName = champ.ChampName;
-						c.Ability = champ.Ability;
 					}
 				}
 			}

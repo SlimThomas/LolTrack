@@ -8,17 +8,15 @@
 
 		public int ChampionID { get; set; }
         public string ChampName { get; set; }
-        public string Ability { get; set; }
         public string ChampDesc { get; set; }
         public string Difficulty { get; set; }
         public string ChampSplash { get; set; }
         public Ability ability { get; set; }
 
-        public Champion(int championID, string name, string ability, string desc, string difficulty, string splash)
+        public Champion(int championID, string name, string desc, string difficulty, string splash)
 		{
 			ChampionID = championID;
 			ChampName = name;
-			Ability = ability;
 			ChampDesc = desc;
 			Difficulty = difficulty;
 			ChampSplash = splash;
