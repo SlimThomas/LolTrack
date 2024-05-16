@@ -10,16 +10,77 @@
 body {
     height: 1500px;
     position: relative;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 footer {
     position: absolute;
     background: linear-gradient(#486144ff, #374f44ff);
     bottom: 0;
-    height: 80px;
-    padding-bottom: 20px;
+    padding-bottom: -20px;
     width: 100%;
 }
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.footer-section {
+    flex: 1 1 20%; /* Flex-grow, flex-shrink, flex-basis */
+    min-width: 150px; /* Ensures sections don't get too narrow */
+    margin: 10px 0;
+}
+
+    .footer-section h4 {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #efdc9e; /* Adjust as needed */
+    }
+
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        .footer-section ul li {
+            margin-bottom: 5px;
+        }
+
+            .footer-section ul li a {
+                text-decoration: none;
+                color: #efdc9e; /* Adjust as needed */
+                font-size: 14px;
+            }
+
+                .footer-section ul li a:hover {
+                    text-decoration: underline;
+                }
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+    .footer-bottom p {
+        margin: 0;
+        font-size: 14px;
+        color: #efdc9e; /* Adjust as needed */
+    }
+
+    .footer-bottom a {
+        color: #efdc9e; /* Adjust as needed */
+        text-decoration: none;
+    }
+
+        .footer-bottom a:hover {
+            text-decoration: underline;
+        }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -226,26 +287,16 @@ footer {
         color: ghostwhite !important;
 }
 
-.search-container {
-    text-align: center;
-}
-
-.search-bar {
-    padding: 10px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    width: 355px;
-    max-width: 100%;
-    font-size: 16px;
-    box-sizing: border-box;
-
+.LolLogo {
     position: absolute;
-    top: 320px; 
-    left: 48%; 
-    transform: translateX(-50%); 
+    left: 50%;
+    top: 100px; /* Adjust this value to move the logo up or down */
+    transform: translateX(-50%);
+    height: 200px;
+    width: 200px;
 }
 
-.search-button {
+.login-button {
     padding: 10px 20px;
     background-color: #486144;
     color: #fff;
@@ -254,35 +305,52 @@ footer {
     cursor: pointer;
     font-size: 16px;
     position: absolute;
-    top: 322px;
-    left: 64%;
-    transform: translateX(-50%);
+    top: 265px;
+    left: 149px;
 }
-.login-button {
-    padding: 10px 20px; 
-    background-color: #486144; 
-    color: #fff; 
-    border: none; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    position: absolute; 
-    top: 265px; 
-    left: 149px; 
-
+.search-container {
+    position: relative; 
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    top: 300px; 
+    
 }
 
-    .search-button:hover {
-        background-color: #0056b3;
+.search-form {
+    top: 200px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc; /* Border around the input and button */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden; /* Ensures the rounded corners are applied */
+}
+
+.search-bar {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 300px; 
+}
+
+.search-button {
+    background: linear-gradient(#28b2c1, #0c7e97); /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer/hand icon */
+    padding: 10px; /* Some padding */
+    font-size: 16px; /* Set a font size */
+}
+
+    .search-button i {
+        font-size: 16px; /* Adjust icon size if needed */
     }
 
-.search-bar button {
-    padding: 5px 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
+    .search-button:hover {
+        background-color: #45a049; /* Darker green */
+    }
 
 #UserName, #Password {
     background-image: linear-gradient(#c6ac70, #efdc9e); /* Gradient background */
@@ -319,6 +387,13 @@ label[for='UserName'], label[for='Password'] {
 }
 
 
+.forgot-password {
+    margin-top: 25px; /* Space between button and link */
+    color: #efdc9e;
+    text-decoration: none;
+}
+
+
 
 .login-button {
     width: 20%; /* Adjusted to take full width of its container */
@@ -330,7 +405,7 @@ label[for='UserName'], label[for='Password'] {
     cursor: pointer;
     margin-top: 200px; /* Adjusted for consistency */
     flex-direction: column;
-    top: 190px;
+    top: 220px;
     left: 555px;
 }
 
@@ -464,6 +539,45 @@ label[for='UserName'], label[for='Password'] {
     box-sizing: border-box;
     padding: 10px;
     max-width: calc(25% - 20px);
+}
+
+.square1 {
+    position: relative; 
+    top: 900px; 
+    left: 20px; 
+    height: 500px;
+    width: 505px;
+    background: linear-gradient(#486144ff, #374f44ff);
+}
+
+.Ad1 {
+    position: absolute;
+    left: 1150px;
+    top: 85px; /* Adjust this value to move the logo up or down */
+    /*transform: translateX(-50%);*/
+    height: 800px;
+    width: 200px;
+}
+.Ad2 {
+    position: absolute; 
+    left: 20px; 
+    top: 85px; 
+    height: 800px; 
+    width: 200px; 
+}
+.Ad3 {
+    position: absolute;
+    top: 2535px; /* Moves the element down 1000px from the top of the container */
+    height: 200px;
+    width: 60%; /* Ensures the width is 50% of the container */
+    left: 0;
+    right: 0; /* Centers the element horizontally */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.standard-page {
+    height: 1000px; /* Define the standard height */
 }
 
 
