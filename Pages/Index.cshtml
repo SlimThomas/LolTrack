@@ -4,19 +4,42 @@
     ViewData["Title"] = "Home page";
 }
 
+<style>
+    .bodyIndex {
+        height: 3000px;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+</style>
 
 
-<body>
 
-    <img src="/Images/LolTrackLogo.png" alt="Logo" style="position: absolute; left: 580px; top: 100px; height: 200px; width: 200px; " />
+<body class="bodyIndex">
 
+    <header>
+        <img src="/Images/LolTrackLogo.png" alt="Logo" class="LolLogo" />
+    </header>
 
-    <div class="search-container">
-        <form action="/Search">
-            <input type="text" name="q" placeholder="Search..." class="search-bar">
-            <button type="submit" class="search-button">Search</button>
-        </form>
-    </div>
+    <main>
+        <div class="search-container">
+            <form action="/Search" class="search-form">
+                <input type="text" name="q" placeholder="Search..." class="search-bar">
+                <button type="submit" class="search-button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <img src="/Images/Ad1banner.jpeg" alt="Ad-1" class="Ad1" />
+        <img src="/Images//Ad2banner.jpeg" alt="Ad-2" class="Ad2" />
+        <img src="/Images/LolAdbanner.jpeg" alt="Ad-3" class="Ad3" />
+
+        <div class="square1"></div>
+        <div class="square2"></div>
+    </main>
+
     
 </body>
 
