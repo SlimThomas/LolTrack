@@ -42,6 +42,8 @@ footer {
     margin: 10px;
     margin-bottom: 30px;
     border: 5px ridge #efdc9e;
+    text-align: center;
+    color: #efdc9e;
 }
 
 .splash {
@@ -350,6 +352,11 @@ label[for='UserName'], label[for='Password'] {
     -ms-flex: 25%;
     flex: 25%;
     padding: 0 4px; 
+}
+.column2 {
+    -ms-flex: 50%;
+    flex: 50%;
+    padding: 0 4px;
 }
 
     .column img {

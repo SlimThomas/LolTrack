@@ -3,99 +3,77 @@
 @{
 }
 
-<head>
-    <a class="backbtn" type="button" title="back" asp-page="GetAllChamps">Go Back</a>
+<head class="bg-image-blur">
+
 </head>
-@* <div class="bg-image-blur">
-    <div class="bgsplash"></div>
-</div> *@
-    @if (Model.Abilities != null)
-    {
-        <h1>@Model.champion.ChampName</h1>
-        <p>@Model.champion.Difficulty</p>
-        <p>@Model.champion.ChampDesc</p>
-        <div>
-            <div class="row">
-                @foreach(var abi in Model.Abilities)
+<body>
+    <div class="detailcontainer">
+        <div class="detailblock">
+                @foreach (var abi in Model.Abilities) 
                 {
+                    <div class="row-6">
+                    <div class="col-4" style="margin-bottom: 30px;">
                     @if (abi.AbiChampID == Model.champion.ChampionID)
                     {
-                        <div class="column">
-                            <div class="flip-card">
-                                <div class="flip-card-inner">
-                                    <div class="flip-card-front">
-                                        <img src="/Images/@abi.AbilitySplash" alt="Avatar" style="width: 100%">
-                                    </div>
-                                    <div class="flip-card-back">
-                                        <h1>@abi.AbilityName</h1>
-                                        <p>@abi.AbilityDesc</p>
-                                    </div>
-                                </div>
-                            </div>
+                    
+                        <strong>@abi.AbilityName</strong>
+                        <div>
+                            <img src="/Images/@abi.AbilitySplash" class="abiSplash" style="width: 75px; height: 75px;" />
                         </div>
+                        <i>@abi.AbilityDesc</i>
+                   
                     }
+                    </div>
+                    </div>
                 }
+            <h1 style="position:relative; bottom:1100px; left: 750px;">@Model.champion.ChampName</h1>
+            <img src="/Images/@Model.champion.ChampSplash" class="splashcontainer" style="width: 50%; height: auto; bottom:1100px; left: 500px;"</>
+            <div style ="position: relative; bottom: 1110px; left: 760px;">
+            <a class="backbtn" type="button" title="back" asp-page="GetAllChamps">Go Back</a>
             </div>
+                
         </div>
-    }
+    </div>
+</body>
+
 <style>
-    .column {
-        -ms-flex: 25%;
-        flex: 25%;
-        padding: 0 4px;
+    .detailcontainer{
+        position: relative;
+        margin-top: 50px;
     }
-
-        .column img {
-            margin-top: 8px;
-            vertical-align: middle;
-        }
-
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
+    .detailcol{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
-
-    .flip-card {
-        background-color: transparent;
-        width: 150px;
-        height: 150px;
-        perspective: 1000px;
+    .detailblock{
+        position: absolute;
+        width: auto;
+        height: 1200px;
+        background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
+        border: 5px ridge #efdc9e;
+        color: #c6ac70;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
     }
-
-    .flip-card-inner {
+    .abiSplash{
         position: relative;
         width: 100%;
-        height: 100%;
+        margin: 10px;
+        margin-bottom: 10px;
+        border: 5px ridge #efdc9e;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
-
-    .flip-card:hover .flip-card-inner {
-        transform: rotateY(180deg);
-    }
-
-    .flip-card-front {
+    .top-left{
         position: absolute;
-        width: 100%;
-        height: 100%;
-        -webtkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        background-color: #bbb;
-        color: black;
-    }
-
-    .flip-card-back {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        -webtkit-backface-visibility: hidden;
-        backface-visibility: hidden;
-        background-color: #0c7e97;
-        color: #efdc9e;
-        transform: rotateY(180deg);
+        top: 8px;
+        left: 16;
     }
 
 </style>
