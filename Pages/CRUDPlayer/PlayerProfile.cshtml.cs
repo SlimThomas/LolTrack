@@ -23,12 +23,12 @@ namespace LolTrack.Pages.CRUDPlayer
             matches = _matchService.GetMatches();
             player = _playerService.GetPlayer(id);
             //var p = _playerService.GetPlayer(id);
-            player.TotalMatch = matches.Count();
-            player.TotalWins = _playerService.TotalW();
-            player.TotalLosses = _playerService.TotalL();
-            player.WinPerC = _playerService.WinP();
-            player.KDA = _playerService.GetKDA();
-            player.AvgVision = _playerService.AVGVi();
+            player.TotalMatch = _playerService.MCount(player);
+            player.TotalWins = _playerService.TotalW(player);
+            player.TotalLosses = _playerService.TotalL(player);
+            player.WinPerC = _playerService.WinP(player);
+            player.KDA = _playerService.GetKDA(player);
+            player.AvgVision = _playerService.AVGVi(player);
             if (player == null)
             {
                 return RedirectToPage("/NotFound");//NotFound er ikke defineret endnu

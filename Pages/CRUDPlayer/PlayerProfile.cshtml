@@ -4,8 +4,8 @@
 }
 <div class="detailcontainer">
 <table class="StatBox" style="width: 15%">
-    @if (Model.player != null)
-    {
+        @if (Model.player.PlayerID != null) 
+        {
             <thead>
         <tr>
             <th style="text-align:left">Stats</th>
@@ -40,7 +40,7 @@
         </tbody>
     }
 </table>
-
+    <a class="backbtn" type="button" title="back" asp-page="PlayerCompare" asp-route-id="@Model.player.PlayerID">Compare</a>
 
     <div class="detailblock" style="width:650px; height:100%">
 <table class="StatBox">

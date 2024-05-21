@@ -10,7 +10,7 @@ namespace LolTrack.Services
 	{
 		private List<Player> _players;
 		private List<Match> _matches;
-		
+
 		public PlayerService()
 		{
 			_matches = MockMatch.GetMockMatches();
@@ -33,7 +33,7 @@ namespace LolTrack.Services
 		{
 			foreach (Player player in _players)
 			{
-				if(player.PlayerName == id) return player;
+				if (player.PlayerName == id) return player;
 			}
 			return null;
 		}
@@ -69,9 +69,9 @@ namespace LolTrack.Services
 			return playerToBeDeleted;
 		}
 
-		public List<Player> GetPlayers() 
+		public List<Player> GetPlayers()
 		{
-			return _players; 
+			return _players;
 		}
 
 		public IEnumerable<Player> PlayerSearch(string str)
@@ -81,102 +81,85 @@ namespace LolTrack.Services
 								  select p;
 			return NameSearchQuery;
 		}
-		public int TotalW()
-		{
-			foreach (Player p in _players)
-			{
-				foreach (Match m in _matches)
-				{
-					if (m.PlayerMatchID == p.PlayerID)
-					{
-						var TotW = from ma in _matches
-								   where ma.Win == true & ma.PlayerMatchID == p.PlayerID
-								   select ma;
-						int TotalWins = TotW.Count();
-						p.TotalWins = TotalWins;
-					}
-					return p.TotalWins;
-				}
-			}
-			return 0;
-		}
-		public int TotalL()
-		{
-			foreach (Player p in _players)
-			{
 
-				foreach (Match m in _matches)
+		public int MCount(Player player)
+		{
+			int TotalM = 0;
+			foreach (Match m in _matches)
+			{
+				if (m.PlayerMatchID == player.PlayerID)
 				{
-					if (m.PlayerMatchID == p.PlayerID)
-					{
-						var TotL = from ma in _matches
-								   where ma.Win != true & ma.PlayerMatchID == p.PlayerID
-                                   select ma;
-						p.TotalLosses = TotL.Count();
-					}
-					return p.TotalLosses;
+					TotalM++;
 				}
 			}
-			return 0;
+			return TotalM;
 		}
-        public double WinP()
-        {
-			foreach (Player p in _players)
+		public int TotalW(Player player)
+		{
+			int TotalW = 0;
+			foreach (Match m in _matches)
 			{
-				foreach (Match m in _matches)
+				if (m.PlayerMatchID == player.PlayerID)
 				{
-					if (m.PlayerMatchID == p.PlayerID)
+					if(m.Win == true)
 					{
-						double WP = Convert.ToDouble(TotalW()) / p.TotalMatch;
-						p.WinPerC = WP;
+						TotalW++;
 					}
-					return p.WinPerC;
 				}
 			}
-			return 0;
-        }
-        public double GetKDA()
-        {
-			foreach (Player p in _players)
+			return TotalW;
+		}
+		public int TotalL(Player p)
+		{
+			int totalL = 0;
+			foreach (Match m in _matches)
 			{
-				foreach (Match m in _matches)
+				if (m.PlayerMatchID == p.PlayerID)
 				{
-					if (m.PlayerMatchID == p.PlayerID)
+					if(m.Win != true)
 					{
-						var kQ = from ma in _matches
-								 where ma.PlayerMatchID == p.PlayerID
-                                 select ma.Kills;
-						var dQ = from ma in _matches
-								 where ma.PlayerMatchID == p.PlayerID
-                                 select ma.Deaths;
-						var aQ = from ma in _matches
-								 where ma.PlayerMatchID == p.PlayerID
-                                 select ma.Assists;
-						double kda = Convert.ToDouble((kQ.Sum() + aQ.Sum())) / Convert.ToDouble(dQ.Sum());
-						p.KDA = kda;
+						totalL++;
 					}
-					return p.KDA;
 				}
-			} return 0;
-        }
-        public double AVGVi()
-        {
-			foreach (Player p in _players)
+
+			}
+			return totalL;
+		}
+		public double WinP(Player p)
+		{
+			foreach (Match m in _matches)
 			{
-				foreach (Match m in _matches)
+				if (m.PlayerMatchID == p.PlayerID)
 				{
-					if (m.PlayerMatchID == p.PlayerID)
-					{
-						var VS = from ma in _matches
+					double WP = Convert.ToDouble(TotalW(p)) / p.TotalMatch;
+					p.WinPerC = WP;
+				}
+			}
+			return p.WinPerC;
+		}
+		public double GetKDA(Player p)
+		{
+            double kda = 0;
+					var kQ = from ma in _matches
+							 where ma.PlayerMatchID == p.PlayerID
+							 select ma.Kills;
+					var dQ = from ma in _matches
+							 where ma.PlayerMatchID == p.PlayerID
+                             select ma.Deaths;
+					var aQ = from ma in _matches
+							 where ma.PlayerMatchID == p.PlayerID
+                             select ma.Assists;
+					kda = Convert.ToDouble((kQ.Sum() + aQ.Sum())) / Convert.ToDouble(dQ.Sum());
+			return kda;
+		}
+        public double AVGVi(Player p)
+        {
+			double aVS = 0;
+                        var VS = from ma in _matches
 								 where ma.PlayerMatchID == p.PlayerID
                                  select ma.Visionscore;
-						double aVS = Convert.ToDouble(VS.Sum()) / Convert.ToDouble(_matches.Count());
-						p.AvgVision = aVS;
-					}
-					return p.AvgVision;
-				}
-			}
-			return 0;
+                        aVS = Convert.ToDouble(VS.Sum()) / Convert.ToDouble(_matches.Count());
+            return aVS;
         }
     }
 }
