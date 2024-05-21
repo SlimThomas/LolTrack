@@ -18,6 +18,7 @@ namespace LolTrack.Models
         public string Password { get; set; }
 
 
+        public ICollection<Match> Matches { get; set; } = new List<Match>();
         public User(string userName, string password)
         {
             

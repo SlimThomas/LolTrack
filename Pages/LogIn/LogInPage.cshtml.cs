@@ -32,7 +32,7 @@ namespace LolTrack.Pages.LogIn
         {
         }
 
-        public async Task<IActionResult> OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             List<User> users = _userService._users; 
             foreach (User user in users)
