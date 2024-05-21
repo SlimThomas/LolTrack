@@ -51,6 +51,12 @@
         public Runes Runes { get; set; }
         public SSpells SSpells { get; set; }
 
+        public int UserID { get; set; }
+        public User User { get; set; }
+
+        public int PlayerID { get; set; }
+        public Player Player { get; set; }
+
 
         // Måske vi skal lave MatchDate, så man kan søge på en dag. og se hvor mange matches man har taget den dag
 

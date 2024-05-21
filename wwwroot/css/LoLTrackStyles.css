@@ -552,7 +552,7 @@ label[for='UserName'], label[for='Password'] {
 
 .Ad1 {
     position: absolute;
-    left: 1150px;
+    left: 1205px;
     top: 85px; /* Adjust this value to move the logo up or down */
     /*transform: translateX(-50%);*/
     height: 800px;
