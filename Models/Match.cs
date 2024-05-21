@@ -38,6 +38,7 @@
     {
         public int MatchID { get; set; }
         public int PlayerMatchID {  get; set; }
+        public int UserMatchID { get; set; }
         public bool Win { get; set; }
         public int Kills { get; set; }
         public int Deaths { get; set; }
@@ -60,10 +61,11 @@
 
         // Måske vi skal lave MatchDate, så man kan søge på en dag. og se hvor mange matches man har taget den dag
 
-        public Match(int matchID, int playermatchID, bool win, int kills, int deaths, int assists, double kDA, int visionscore, LaneType laneType, Items items, Champions champions, Runes runes, SSpells sSpells, int minions)
+        public Match(int matchID, int playermatchID, int userMatchID, bool win, int kills, int deaths, int assists, double kDA, int visionscore, LaneType laneType, Items items, Champions champions, Runes runes, SSpells sSpells, int minions)
         {
             MatchID = matchID;
             PlayerMatchID = playermatchID;
+            UserMatchID = userMatchID;
             Win = win;
             Kills = kills;
             Deaths = deaths;

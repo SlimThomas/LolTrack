@@ -12,41 +12,104 @@
                     <h1>Welcome, @Model.UserName</h1>
                     <p>Ladder rank: 357,427 (49.67% of top)</p>
 
-                <table class="StatBoxMyProfile">
-                    <thead>
-                        <tr class="backbtnmyprofile">
-                            <th>Kills</th>
-                            <th>Deaths</th>
-                            <th>Assists</th>
-                            <th>KDA</th>
-                            <th>VisionScore</th>
-                            <th>LaneType</th>
-                            <th>Champion</th>
-                            <th>SSpell</th>
-                            <th>Minions</th>
-                        </tr>
-                    </thead>
-                    @foreach (var m in Model.matches)
-                    {
-                        @if (m.PlayerMatchID == Model.UserID)
-                        {
+                <div class="detailcontainer">
+                    <table class="StatBox" style="width: 15%">
+                        @if (Model.UserID != null)
+                                    {
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left">Stats</th>
+                                    <th>@Model.UserName</th>
+                                </tr>
+                            </thead>
                             <tbody>
-                                <tr class="backbtn">
-                                    <td>@m.Kills</td>
-                                    <td>@m.Deaths</td>
-                                    <td>@m.Assists</td>
-                                    <td>@m.KDA</td>
-                                    <td>@m.Visionscore</td>
-                                    <td>@m.LaneType</td>
-                                    <td>@m.Champions</td>
-                                    <td>@m.SSpells</td>
-                                    <td>@m.Minions</td>
+                                <tr>
+                                    <td style="text-align:left">Matches</td>
+                                    <td>@Model.TotalMatch</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Total Wins</td>
+                                    <td>@Model.TotalWins</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Total Losses</td>
+                                    <td>@Model.TotalLosses</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Win Percentage</td>
+                                    <td>@Model.WinPerC</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">KDA</td>
+                                    <td>@Model.KDA</td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left">Average Vision</td>
+                                    <td>@Model.AvgVision</td>
                                 </tr>
                             </tbody>
                         }
-                    }
-                </table>
+                    </table>
+                   
 
+                    <div class="detailblock" style="width:650px; height:100%">
+                        <table class="StatBox">
+                            <thead>
+                                <tr class="backtbn">
+                                    <th>Kills</th>
+                                    <th>Deaths</th>
+                                    <th>Assists</th>
+                                    <th>KDA</th>
+                                    <th>VisionScore</th>
+                                    <th>LaneType</th>
+                                    <th>Champion</th>
+                                    <th>SSpell</th>
+                                    <th>Minions</th>
+                                </tr>
+                            </thead>
+                            @foreach (var p in Model.matches)
+                            {
+                                @if (p.PlayerMatchID == Model.UserID)
+                                {
+                                    @if (p.Win == true)
+                                    {
+
+
+                                        <tbody>
+                                            <tr class="MatchL" style="background: linear-gradient(green, darkgreen)">
+                                                <td>@p.Kills</td>
+                                                <td>@p.Deaths</td>
+                                                <td>@p.Assists</td>
+                                                <td>@p.KDA</td>
+                                                <td>@p.Visionscore</td>
+                                                <td>@p.LaneType</td>
+                                                <td>@p.Champions</td>
+                                                <td>@p.SSpells</td>
+                                                <td>@p.Minions</td>
+                                            </tr>
+                                        </tbody>
+                                    }
+                                    @if (p.Win != true)
+                                    {
+                                        <tbody>
+                                            <tr class="MatchL" style="background: linear-gradient(red, maroon)">
+                                                <td>@p.Kills</td>
+                                                <td>@p.Deaths</td>
+                                                <td>@p.Assists</td>
+                                                <td>@p.KDA</td>
+                                                <td>@p.Visionscore</td>
+                                                <td>@p.LaneType</td>
+                                                <td>@p.Champions</td>
+                                                <td>@p.SSpells</td>
+                                                <td>@p.Minions</td>
+                                            </tr>
+                                        </tbody>
+                                    }
+                                }
+                            }
+                        </table>
+                    </div>
+                </div>
 
                  </div>
 
