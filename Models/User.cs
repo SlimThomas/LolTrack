@@ -16,14 +16,18 @@ namespace LolTrack.Models
         public int UserPlayerID { get; set; }
         [Required]
         public string Password { get; set; }
+        public string ProfileSplash { get; set; }
+
 
 
         public ICollection<Match> Matches { get; set; } = new List<Match>();
-        public User(string userName, string password)
+        public User(string userName, string password, string profileSplash, int userplayerid)
         {
             
             UserName = userName;
             Password = password;
+            ProfileSplash = profileSplash;
+            UserPlayerID = userplayerid;
         }
 
         public User() 

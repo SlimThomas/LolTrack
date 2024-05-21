@@ -3,10 +3,57 @@
 @{
 }
 
-<h1>Welcome, @Model.UserName</h1>
+<body>
+    <div class="Profile-block">
+        
+            <div class="profile-container">
+                <img src="/Images/@Model.ProfilePic" class="profile-pic" />
+                 <div class="profile-details">
+                    <h1>Welcome, @Model.UserName</h1>
+                    <p>Ladder rank: 357,427 (49.67% of top)</p>
 
-<div>
-    
-    <p>User ID: @Model.UserID</p>
+                <table class="StatBoxMyProfile">
+                    <thead>
+                        <tr class="backbtnmyprofile">
+                            <th>Kills</th>
+                            <th>Deaths</th>
+                            <th>Assists</th>
+                            <th>KDA</th>
+                            <th>VisionScore</th>
+                            <th>LaneType</th>
+                            <th>Champion</th>
+                            <th>SSpell</th>
+                            <th>Minions</th>
+                        </tr>
+                    </thead>
+                    @foreach (var m in Model.matches)
+                    {
+                        @if (m.PlayerMatchID == Model.UserID)
+                        {
+                            <tbody>
+                                <tr class="backbtn">
+                                    <td>@m.Kills</td>
+                                    <td>@m.Deaths</td>
+                                    <td>@m.Assists</td>
+                                    <td>@m.KDA</td>
+                                    <td>@m.Visionscore</td>
+                                    <td>@m.LaneType</td>
+                                    <td>@m.Champions</td>
+                                    <td>@m.SSpells</td>
+                                    <td>@m.Minions</td>
+                                </tr>
+                            </tbody>
+                        }
+                    }
+                </table>
+
+
+                 </div>
+
+                  
+
+            </div>
+        
+    </div>
    
-</div>
+</body>

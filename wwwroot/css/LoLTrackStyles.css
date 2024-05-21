@@ -581,3 +581,125 @@ label[for='UserName'], label[for='Password'] {
 }
 
 
+.detailcontainer { /* Champ Detail*/
+    position: relative;
+    margin-top: 50px;
+}
+
+.detailcol { /*Champ Detail*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.detailblock { /*Champ Detail*/
+    position: absolute;
+    width: auto;
+    height: 1200px;
+    background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
+    border: 5px ridge #efdc9e;
+    color: #c6ac70;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.abiSplash { /*Champ Detail*/
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    margin-bottom: 10px;
+    border: 5px ridge #efdc9e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-container { /*MyProfile*/
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    padding: 20px; /* Optional: Add some padding */
+}
+
+.profile-pic { /*MyProfile*/
+
+    width: 150px; /* Adjust the size of the image */
+    height: 150px; /* Adjust the size of the image */
+    margin-right: 20px; /* Add space between the image and the text */
+    margin-top: 30px; /*Laver mellemrum mellem billedet og toppen*/
+    border: 5px ridge #efdc9e
+}
+
+.profile-details { /*MyProfile*/
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Profile-block { /*MyProfile*/
+    position: absolute;
+    width: 1200px; 
+    height: 1000px; 
+    background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
+    border: 5px ridge #efdc9e;
+    color: #c6ac70;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 20px;
+    margin-top: 20px; 
+}
+
+.detailcontainer { /*Player Profile*/
+    position: relative;
+    margin-top: 50px;
+}
+
+.detailblock { /*Player Profile*/
+    position: absolute;
+    width: auto;
+    height: 1200px;
+    background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
+    border: 5px ridge #efdc9e;
+    color: #c6ac70;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.StatBoxMyProfile { /*MyProfile*/
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: #efdc9e;
+    font-weight: bold;
+    border: 3px solid #efdc9e;
+    position: absolute;
+    width: auto;
+    /*padding: px;
+    margin-bottom: px;*/
+    text-align: center;
+}
+.backbtnmyprofile { /*MyProfile*/
+    position: absolute;
+    background: linear-gradient(#28b2c1, #0c7e97);
+    border: 3px groove #efdc9e;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #efdc9e;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+
