@@ -24,11 +24,21 @@
 
     <main>
         <div class="search-container">
-            <form action="/Search" class="search-form">
-                <input type="text" name="q" placeholder="Search..." class="search-bar">
-                <button type="submit" class="search-button">
+            <form method="post" class="search-form">
+                <div class="input-group mb-3">
+                <input asp-for="SearchStr" class="search-bar">
+                <input type="submit" asp-page-handler="PlayerSearch" value="Search" class="backbtn" />
+                    @foreach(var p in Model.PlayerList)
+                    {
+                        if(p.PlayerName == Model.SearchStr)
+                        {
+                            <a class="backbtn" type="button" asp-page="CRUDPlayer/PlayerProfile" asp-route-id="@p.PlayerID">Go to Player</a>
+                        }
+                    }
+                    @*                 <button type="submit" class="search-button">
                     <i class="fas fa-search"></i>
-                </button>
+                </button> *@
+                </div>
             </form>
         </div>
 
