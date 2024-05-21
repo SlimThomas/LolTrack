@@ -7,22 +7,29 @@ namespace LolTrack.Pages
 {
     public class IndexModel : PageModel
     {
+        private PlayerService _playerService;
         private readonly ILogger<IndexModel> _logger;
         [BindProperty]
         public string SearchStr { get; set; }
+        public List<Player> PlayerList { get; set; }
+        public Player player { get; set; }
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, PlayerService playerService)
         {
             _logger = logger;
+            _playerService = playerService;
         }
 
         public void OnGet()
         {
-
+            PlayerList = _playerService.GetPlayers();
         }
-        public void OnPost(string sch)
+        public IActionResult OnPostPlayerSearch()
         {
-            SearchStr = sch;
+            PlayerList = _playerService.PlayerSearch(SearchStr).ToList();
+            player = _playerService.GetPlayerName(SearchStr);
+            return Page();
+            //return RedirectToPage("/CrudPlayer/PlayerProfile");
         }
     }
 }
