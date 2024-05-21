@@ -61,25 +61,58 @@
     {
     @if (p.PlayerMatchID == Model.player.PlayerID)
     {
-        <tbody>
-            <tr class="backbtn">
-            <td>@p.Kills</td>
-            <td>@p.Deaths</td>
-            <td>@p.Assists</td>
-            <td>@p.KDA</td>
-            <td>@p.Visionscore</td>
-            <td>@p.LaneType</td>
-            <td>@p.Champions</td>
-            <td>@p.SSpells</td>
-            <td>@p.Minions</td>
+        @if(p.Win == true)
+        {
+                        
+                    
+            <tbody>
+            <tr class="MatchL" style="background: linear-gradient(green, darkgreen)">
+                <td>@p.Kills</td>
+                <td>@p.Deaths</td>
+                <td>@p.Assists</td>
+                <td>@p.KDA</td>
+                <td>@p.Visionscore</td>
+                <td>@p.LaneType</td>
+                <td>@p.Champions</td>
+                <td>@p.SSpells</td>
+                <td>@p.Minions</td>
             </tr>
-        </tbody>
+            </tbody>
+        }
+        @if(p.Win != true)
+        {
+            <tbody>
+                <tr class="MatchL" style="background: linear-gradient(red, maroon)">
+                    <td>@p.Kills</td>
+                    <td>@p.Deaths</td>
+                    <td>@p.Assists</td>
+                    <td>@p.KDA</td>
+                    <td>@p.Visionscore</td>
+                    <td>@p.LaneType</td>
+                    <td>@p.Champions</td>
+                    <td>@p.SSpells</td>
+                    <td>@p.Minions</td>
+                </tr>
+            </tbody>
+        }
     }
     }
 </table>
 </div>
 </div>
 <style>
+    .MatchL {
+        position: relative;
+        border: 3px groove #efdc9e;
+        border-radius: 10px;
+        font-size: 20px;
+        color: #efdc9e;
+        padding: 10px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        text-decoration: none;
+    }
     .detailcontainer {
         position: relative;
         margin-top: 50px;

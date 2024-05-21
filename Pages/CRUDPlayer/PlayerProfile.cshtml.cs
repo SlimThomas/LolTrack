@@ -22,7 +22,6 @@ namespace LolTrack.Pages.CRUDPlayer
         {
             matches = _matchService.GetMatches();
             player = _playerService.GetPlayer(id);
-            //var p = _playerService.GetPlayer(id);
             player.TotalMatch = _playerService.MCount(player);
             player.TotalWins = _playerService.TotalW(player);
             player.TotalLosses = _playerService.TotalL(player);
