@@ -1,4 +1,7 @@
-﻿namespace LolTrack.Models
+﻿using LolTrack.Services;
+using System.Numerics;
+
+namespace LolTrack.Models
 {
 	public class Player
 	{
@@ -14,17 +17,15 @@
         public Match MostPlayedLane { get; set; }
 		public Match match { get; set; }
 
-		public Player(int playerID, int totalWins, string playerName, double winPerC, double kDA, int totalMatch, 
-			int totalLosses, double avgVision/*, Match mostPlayedChamp, Match mostPlayedLane*/)
+		public Player(int playerID, string playerName)
 		{
 			PlayerID = playerID;
 			PlayerName = playerName;
-			TotalWins = totalWins;
-			WinPerC = winPerC;
-			KDA = kDA;
-			TotalMatch = totalMatch;
-			TotalLosses = totalLosses;
-			AvgVision = avgVision;
+			//WinPerC = winPerC;
+			//KDA = kDA;
+			//TotalMatch = totalMatch;
+			//TotalLosses = totalLosses;
+			//AvgVision = avgVision;
 			//MostPlayedChamp = mostPlayedChamp;
 			//MostPlayedLane = mostPlayedLane;
 		}
@@ -32,5 +33,6 @@
 		public Player()
 		{
 		}
-	}
+
+    }
 }

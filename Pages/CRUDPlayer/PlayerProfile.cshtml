@@ -2,74 +2,113 @@
 @model LolTrack.Pages.CRUDPlayer.PlayerProfileModel
 @{
 }
-<table class="bg-text">
-    <thead>
-        <tc>
-            <th>
-                <div>
-                    <div><h1>Name</h1></div>
-                </div>
-            </th>
-            <th>
-                <div>
-                    <div><p>Total Wins</p></div>
-                </div>
-            </th>
-            <th>
-                <div>
-                    <div><b>Win Percentage</b></div>
-                </div>
-            </th>
-            <th>
-                <div>
-                    <div><p>KDA</p></div>
-                </div>
-            </th>
-            <th>
-                <div>
-                    <div><p>Total Matches Played</p></div>
-                </div>
-            </th>
-            <th>
-                <div>
-                    <div><p>Total Losses</p></div>
-                </div>
-            </th>
-            <th>
-                <div>
-                    <div><p>Average Vision Score</p></div>
-                </div>
-            </th>
-        </tc>
-    </thead>
-    <tbody>
-        @if(Model.player != null)
-        {
-            <tc class="btn-secondary">
-                <td>
-                    <h1>@Model.player.PlayerName</h1>
-                </td>
-                <td>
-                    <p>@Model.player.TotalWins</p>
-                <td>
-                    <b>@Model.player.WinPerC</b>
-                </td>
-                <td>
-                    <p>@Model.player.KDA</p>
-                </td>
-                <td>
-                    <p>@Model.player.TotalMatch</p>
-                </td>
-                <td>
-                    <p>@Model.player.TotalLosses</p>
-                </td>
-                <td>
-
-                    <p>@Model.player.AvgVision</p>
-                </td>
-                <a class="backbtn" type="button" title="back" asp-page="PlayerCompare" asp-route-id="@Model.player.PlayerID">Compare with another player</a>
-            </tc>
-        }
-    </tbody>
+<div class="detailcontainer">
+<table class="StatBox" style="width: 15%">
+    @if (Model.player != null)
+    {
+            <thead>
+        <tr>
+            <th style="text-align:left">Stats</th>
+            <th>@Model.player.PlayerName</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td style="text-align:left">Matches</td>
+            <td>@Model.player.TotalMatch</td>
+        </tr>
+        <tr>
+            <td style ="text-align:left">Total Wins</td>
+            <td>@Model.player.TotalWins</td>
+        </tr>
+        <tr>
+            <td style ="text-align:left">Total Losses</td>
+            <td>@Model.player.TotalLosses</td>
+        </tr>
+        <tr>
+                <td style="text-align:left">Win Percentage</td>
+            <td>@Model.player.WinPerC</td>
+        </tr>
+        <tr>
+                <td style="text-align:left">KDA</td>
+            <td>@Model.player.KDA</td>
+        </tr>
+        <tr>
+                <td style="text-align:left">Average Vision</td>
+            <td>@Model.player.AvgVision</td>
+        </tr>
+        </tbody>
+    }
 </table>
-<a class="backbtn" type="button" title="back" asp-page="GetAllPlayers">Go Back</a>
+
+
+    <div class="detailblock" style="width:650px; height:100%">
+<table class="StatBox">
+        <thead>
+            <tr class="backtbn">
+            <th>Kills</th>
+            <th>Deaths</th>
+            <th>Assists</th>
+            <th>KDA</th>
+            <th>VisionScore</th>
+            <th>LaneType</th>
+            <th>Champion</th>
+            <th>SSpell</th>
+            <th>Minions</th>
+            </tr>
+        </thead>
+    @foreach (var p in Model.matches)
+    {
+    @if (p.PlayerMatchID == Model.player.PlayerID)
+    {
+        <tbody>
+            <tr class="backbtn">
+            <td>@p.Kills</td>
+            <td>@p.Deaths</td>
+            <td>@p.Assists</td>
+            <td>@p.KDA</td>
+            <td>@p.Visionscore</td>
+            <td>@p.LaneType</td>
+            <td>@p.Champions</td>
+            <td>@p.SSpells</td>
+            <td>@p.Minions</td>
+            </tr>
+        </tbody>
+    }
+    }
+</table>
+</div>
+</div>
+<style>
+    .detailcontainer {
+        position: relative;
+        margin-top: 50px;
+    }
+
+    .detailblock {
+        position: absolute;
+        width: auto;
+        height: 1200px;
+        background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
+        border: 5px ridge #efdc9e;
+        color: #c6ac70;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .StatBox {
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.4);
+        color: #efdc9e;
+        font-weight: bold;
+        border: 3px solid #efdc9e;
+        position: relative;
+        width: 80%;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+</style>
+
