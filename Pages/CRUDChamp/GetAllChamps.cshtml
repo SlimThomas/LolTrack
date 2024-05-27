@@ -3,14 +3,14 @@
 @{
 }
 <head>
-    <h1>Champions</h1>
+    <h1 class="StatBox" style="position:center; margin-top: 10px; margin-left: 10%">Champions</h1>
 </head>
 <body>
 <div class="row">
-    <div class="col-7"><h5>Search</h5></div>
+        <div class="col-7"><h5 style="color: #efdc9e; position:center; margin-top: 10px; margin-left: 10%">Search</h5></div>
 </div>
 <div class="row">
-    <div class="col-4">
+    <div class="col-4"style=" position:center; margin-top: 10px; margin-left: 10%">
         <form method="post" class="form-inline">
             <div class="input-group mb-3">
                 <input asp-for="Search" class="form-control mr-1" placeholder="Enter Search"/>
@@ -20,8 +20,8 @@
     </div>
     <div class="col-3"></div>
 </div>
-<a data-toggle="tooltip" title="Sort By Name" asp-page-handler="SortByName">A-Z</a>
-<a data-toggle="tooltip" title="Sort By Name Descending" asp-page-handler="SortByNameDesc">Z-A</a>
+    <a data-toggle="tooltip" title="Sort By Name" asp-page-handler="SortByName"><strong style="color: #efdc9e; position:center;">A-Z</strong></a>
+    <a data-toggle="tooltip" title="Sort By Name Descending" asp-page-handler="SortByNameDesc"><strong style="color: #efdc9e; position:center;">Z-A</strong></a>
 
 @* @if (Model.Champions != null)
 {

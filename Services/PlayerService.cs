@@ -89,6 +89,13 @@ namespace LolTrack.Services
 			}
 			return list;
 		}
+		public IEnumerable<Player> PlayerNameSearch(string str)
+		{
+            var NameSearchQuery = from p in _players
+                                  where p.PlayerName.Contains(str)
+                                  select p;
+            return NameSearchQuery;
+        }
 
 		public int MCount(Player player)
 		{

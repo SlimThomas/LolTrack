@@ -3,9 +3,9 @@
 @{
 }
 <body>
-<div class="Profile-block">
+    <h1 class="StatBox" style="position:center; margin-top: 10px; margin-left: 10%">Comparing table</h1>
 <div class="profile-container">
-    <table>
+        <table class="StatBox" style="position:center; margin-top: 10px; margin-left: 10%">
         <tr>
             <th style="width:50%">Name</th>
             <th>
@@ -71,8 +71,7 @@
             </td>
         </tr>
     </table>
-    </div>
-    </div>
+</div>
 </body>
 
 <style>
@@ -81,6 +80,7 @@
         border-spacing: 0;
         width: 100%;
         border: 5px ridge #efdc9e;
+        background: linear-gradient(#486144ff, #374f44ff)
     }
 
     th, td {
@@ -90,6 +90,9 @@
 
     th:first-child, td:first-child {
             text-align: center;
+    }
+     tr:nth-child(even){
+        border: 2px solid #efdc9e;
     }
 
 </style>

@@ -2,6 +2,14 @@
 @model LolTrack.Pages.CRUDPlayer.PlayerProfileModel
 @{
 }
+<div class="col-4" style=" position:center; margin-top: 10px; margin-left: 10%">
+<form method="post" class="form-inline">
+    <div class="input-group mb-3">
+        <input asp-for="SearchStr" class="form-control mr-1" placeholder="Enter Search" />
+        <input type="submit" asp-page-handler="ChampSearch" value="Search" class="backbtn" />
+    </div>
+</form>
+    </div>
 <div class="detailcontainer">
 <table class="StatBox" style="width: 15%">
         @if (Model.player.PlayerID != null) 
