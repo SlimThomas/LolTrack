@@ -684,7 +684,7 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     margin-top: 50px;
 }
 
-.detailblock { /*Player Profile*/
+.detailblockMyProfile { /*Player Profile*/
     position: absolute;
     width: auto;
 
