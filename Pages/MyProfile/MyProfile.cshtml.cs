@@ -16,9 +16,7 @@ namespace LolTrack.Pages.MyProfile
         public User user { get; set; }
         public Player player { get; set; }
         public Match userMatchID { get; set; }
-
-
-
+        public List<Player> players { get; set; }
         public List<Match> matches { get; set; }
 
         public MyProfileModel(UserService userService, MatchService matchService, PlayerService playerService)
@@ -59,12 +57,28 @@ namespace LolTrack.Pages.MyProfile
             int id = user.UserPlayerID;
             player = _playerService.GetPlayer(id);
             matches = _matchService.GetMatches();
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+           
+            TotalMatch = _playerService.MCount(user);
+            TotalWins = _playerService.TotalW(user);
+            TotalLosses = _playerService.TotalL(user);
+            WinPerC = _playerService.WinP(user);
+            KDA = _playerService.GetKDA(user);
+            AvgVision = _playerService.AVGVi(user);
+=======
+>>>>>>> Stashed changes
             player.TotalMatch = _playerService.MCount(player);
             player.TotalWins = _playerService.TotalW(player);
             player.TotalLosses = _playerService.TotalL(player);
             player.WinPerC = _playerService.WinP(player);
             player.KDA = _playerService.GetKDA(player);
             player.AvgVision = _playerService.AVGVi(player);
+<<<<<<< Updated upstream
+=======
+>>>>>>> 43bdd880540aa350a3062a951e14d4b7b86168d9
+>>>>>>> Stashed changes
 
 
             return Page();

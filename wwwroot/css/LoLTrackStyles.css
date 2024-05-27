@@ -352,7 +352,7 @@ footer {
         background-color: #45a049; /* Darker green */
     }
 
-#UserName, #Password {
+#UserName, #Password { /*Login Pagen*/
     background-image: linear-gradient(#c6ac70, #efdc9e); /* Gradient background */
     color: #486144; /* Adjusting text color for better visibility */
     border: 2px solid #8a795d; /* Optional: sets a contrasting border color */ /* Adds some padding inside the input fields */
@@ -364,7 +364,7 @@ footer {
     opacity: 100%;
     border: 1px solid #ccc;
 }
-label[for='UserName'], label[for='Password'] {
+label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     font-size: 19px;
     font-family: Arial,Helvetica, sans-serif;
     background: linear-gradient(to right, #28b2c1, #0c7e97);
@@ -372,7 +372,7 @@ label[for='UserName'], label[for='Password'] {
     -webkit-background-clip: text;
 }
 
-.form-box {
+.form-box { /*Login Pagen*/
     background-color: rgba(0, 0, 0, 0.7); 
     border: 6px solid #c6ac70;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -387,7 +387,7 @@ label[for='UserName'], label[for='Password'] {
 }
 
 
-.forgot-password {
+.forgot-password { /*Login Pagen*/
     margin-top: 25px; /* Space between button and link */
     color: #efdc9e;
     text-decoration: none;
@@ -395,7 +395,7 @@ label[for='UserName'], label[for='Password'] {
 
 
 
-.login-button {
+.login-button { /*Login Pagen*/
     width: 20%; /* Adjusted to take full width of its container */
     padding: 10px;
     background: linear-gradient(to right, #28b2c1, #0c7e97);
@@ -409,7 +409,7 @@ label[for='UserName'], label[for='Password'] {
     left: 555px;
 }
 
-    .login-button:hover {
+    .login-button:hover { /*Login Pagen*/
         background-color: #364e36;
     }
 
