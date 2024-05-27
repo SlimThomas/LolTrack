@@ -582,7 +582,7 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
 }
 .Ad3 {
     position: absolute;
-    top: 2535px; /* Moves the element down 1000px from the top of the container */
+    top: 1035px; /* Moves the element down 1000px from the top of the container */
     height: 200px;
     width: 60%; /* Ensures the width is 50% of the container */
     left: 0;
