@@ -616,17 +616,15 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
 }
 
 .detailblock { /*Champ Detail*/
-    position: absolute;
+    position: relative;
     width: auto;
-    height: 1200px;
+    height: auto;
     background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
     border: 5px ridge #efdc9e;
     color: #c6ac70;
     padding-left: 20px;
-    padding-right: 20px;
     padding-bottom: 10px;
-    padding-top: 100px;
-    margin-top: 50px; 
+    margin-top: 10px; 
 }
 
 .abiSplash { /*Champ Detail*/
