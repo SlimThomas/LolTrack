@@ -6,7 +6,7 @@
 <head>
 
 </head>
-<body>
+<body class="bodyIndex">
     <div class="detailcontainer">
         <div class="detailblock">
                 @foreach (var abi in Model.Abilities) 
@@ -35,3 +35,12 @@
         </div>
     </div>
 </body>
+<style>
+    .bodyIndex {
+        height: 1800px !important;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+</style>

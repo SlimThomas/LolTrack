@@ -10,6 +10,7 @@ namespace LolTrack.Pages.CRUDPlayer
     {
         private PlayerService _playerService;
         private MatchService _matchService;
+        public List<Player> PlayerList { get; set; }
         public PlayerProfileModel(PlayerService playerService, MatchService matchService)
         {
             _playerService = playerService;
@@ -18,8 +19,11 @@ namespace LolTrack.Pages.CRUDPlayer
         public Player player { get; set; }
         public List<Match> matches { get; set; }
         public Match match { get; set; }
+        [BindProperty]
+        public string SearchStr { get; set; }
         public IActionResult OnGet(int id)
         {
+            PlayerList = _playerService.GetPlayers();
             matches = _matchService.GetMatches();
             player = _playerService.GetPlayer(id);
             player.TotalMatch = _playerService.MCount(player);
@@ -34,6 +38,12 @@ namespace LolTrack.Pages.CRUDPlayer
             }
             return Page();
         }
-
+        public IActionResult OnPostPlayerSearch()
+        {
+            player = _playerService.GetPlayerName(SearchStr);
+            player = _playerService.GetPlayer(player.PlayerID);
+            return Page();
+            //return RedirectToPage("/CrudPlayer/PlayerProfile");
+        }
     }
 }
