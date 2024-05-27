@@ -16,13 +16,21 @@ namespace LolTrack.Pages.CRUDPlayer
         }
         public User user { get; set; }
         public Player player { get; set; }
+        public Player userplayer { get; set; }
         public List<Player> players { get; set; }
         [BindProperty]
         public string Search { get; set; }
         public IActionResult OnGet(int id)
         {
-            var u = _userService.GetUserByUsername(User.Identity.Name);
+            user = _userService.GetUserByUsername(User.Identity.Name);
+            if (user == null)
+            {
+                return RedirectToPage("/LogIn/LogInPage");
+            }
+
             player = _playerService.GetPlayer(id);
+            int uid = user.UserPlayerID;
+            userplayer = _playerService.GetPlayer(uid);
 
             player.TotalMatch = _playerService.MCount(player);
             player.TotalWins = _playerService.TotalW(player);
@@ -31,6 +39,14 @@ namespace LolTrack.Pages.CRUDPlayer
             player.KDA = _playerService.GetKDA(player);
             player.AvgVision = _playerService.AVGVi(player);
 
+            userplayer.TotalMatch = _playerService.MCount(userplayer);
+            userplayer.TotalWins = _playerService.TotalW(userplayer);
+            userplayer.TotalLosses = _playerService.TotalL(userplayer);
+            userplayer.WinPerC = _playerService.WinP(userplayer);
+            userplayer.KDA = _playerService.GetKDA(userplayer);
+            userplayer.AvgVision = _playerService.AVGVi(userplayer);
+
+            
 
             if (player == null)
             {

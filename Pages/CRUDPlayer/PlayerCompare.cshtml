@@ -3,45 +3,76 @@
 @{
 }
 <body>
-
-    <h2>Comparison Table</h2>
-
+<div class="Profile-block">
+<div class="profile-container">
     <table>
         <tr>
-            <th style="width:50%">Features</th>
+            <th style="width:50%">Name</th>
             <th>
                 @Model.player.PlayerName
             </th>
             <th>
+                @Model.userplayer.PlayerName
             </th>
 
         </tr>
         <tr>
-            <td>Sample text</td>
-            <td><i class="fa fa-remove"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td>TotalMatch</td>
+            <td>
+                @Model.player.TotalMatch
+            </td>
+            <td>
+                @Model.userplayer.TotalMatch    
+            </td>
         </tr>
         <tr>
-            <td>Sample text</td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td>TotalWins</td>
+            <td>
+                @Model.player.TotalWins
+            </td>
+            <td>
+                @Model.userplayer.TotalWins
+            </td>
         </tr>
         <tr>
-            <td>Sample text</td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td>TotalLosses</td>
+            <td>
+                @Model.player.TotalLosses
+            </td>
+            <td>
+                @Model.userplayer.TotalLosses
+            </td>
         </tr>
         <tr>
-            <td>Sample text</td>
-            <td><i class="fa fa-remove"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td>Win%</td>
+            <td>
+                @Model.player.WinPerC
+            </td>
+            <td>
+                @Model.userplayer.WinPerC
+            </td>
         </tr>
         <tr>
-            <td>Sample text</td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td>KDA</td>
+            <td>
+                @Model.player.KDA
+            </td>
+            <td>
+                @Model.userplayer.KDA
+            </td>
+        </tr>
+        <tr>
+            <td>AvgVision</td>
+            <td>
+                @Model.player.AvgVision
+            </td>
+            <td>
+                @Model.userplayer.AvgVision
+            </td>
         </tr>
     </table>
+    </div>
+    </div>
 </body>
 
 <style>
@@ -58,18 +89,10 @@
     }
 
         th:first-child, td:first-child {
-            text-align: left;
+            text-align: center;
         }
 
     tr:nth-child(even) {
-        background-color: #f2f2f2
-    }
-
-    .fa-check {
-        color: green;
-    }
-
-    .fa-remove {
-        color: red;
+        background-color: #efdc9e;
     }
 </style>
