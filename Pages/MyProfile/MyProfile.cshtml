@@ -7,45 +7,45 @@
     <div class="Profile-block">
         
             <div class="profile-container">
-                <img src="/Images/@Model.ProfilePic" class="profile-pic" />
+                <img src="/Images/@Model.user.ProfileSplash" class="profile-pic" />
                  <div class="profile-details">
-                    <h1>Welcome, @Model.UserName</h1>
+                    <h1>Welcome, @Model.user.UserName</h1>
                     <p>Ladder rank: 357,427 (49.67% of top)</p>
 
                 <div class="detailcontainer">
                     <table class="StatBox" style="width: 15%">
-                        @if (Model.UserID != null)
+                        @if (Model.user.UserID != null)
                                     {
                             <thead>
                                 <tr>
                                     <th style="text-align:left">Stats</th>
-                                    <th>@Model.UserName</th>
+                                    <th>@Model.user.UserName</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td style="text-align:left">Matches</td>
-                                    <td>@Model.TotalMatch</td>
+                                    <td>@Model.player.TotalMatch</td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:left">Total Wins</td>
-                                    <td>@Model.TotalWins</td>
+                                    <td>@Model.player.TotalWins</td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:left">Total Losses</td>
-                                    <td>@Model.TotalLosses</td>
+                                    <td>@Model.player.TotalLosses</td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:left">Win Percentage</td>
-                                    <td>@Model.WinPerC</td>
+                                    <td>@Model.player.WinPerC</td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:left">KDA</td>
-                                    <td>@Model.KDA</td>
+                                    <td>@Model.player.KDA</td>
                                 </tr>
                                 <tr>
                                     <td style="text-align:left">Average Vision</td>
-                                    <td>@Model.AvgVision</td>
+                                    <td>@Model.player.AvgVision</td>
                                 </tr>
                             </tbody>
                         }
@@ -69,7 +69,7 @@
                             </thead>
                             @foreach (var p in Model.matches)
                             {
-                                @if (p.PlayerMatchID == Model.UserID)
+                                @if (p.PlayerMatchID == Model.user.UserPlayerID)
                                 {
                                     @if (p.Win == true)
                                     {

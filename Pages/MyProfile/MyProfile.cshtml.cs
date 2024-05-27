@@ -13,18 +13,8 @@ namespace LolTrack.Pages.MyProfile
         private readonly UserService _userService;
         private MatchService _matchService;
         private PlayerService _playerService;
-
-        public string UserName { get; set; }
-        public int UserID { get; set; }
         public User user { get; set; }
-        public string ProfilePic { get; set; }
-        public Player Player { get; set; }
-        public int TotalMatch { get; set; }
-        public int TotalWins { get; set; }
-        public int TotalLosses { get; set; }
-        public double WinPerC { get; set; }
-        public double KDA { get; set; }
-        public double AvgVision { get; set; }
+        public Player player { get; set; }
         public Match userMatchID { get; set; }
 
 
@@ -40,28 +30,45 @@ namespace LolTrack.Pages.MyProfile
 
 
 
-        public async Task<IActionResult> OnGetAsync()
+        //public async Task<IActionResult> OnGetAsync()
+        //{
+        //    user = _userService.GetUserByUsername(User.Identity.Name);
+        //    if (user == null)
+        //    {
+        //        return NotFound("User Not Found.");
+        //    }
+        //    player = _playerService.GetPlayer(user.UserPlayerID);
+        //    matches = _matchService.GetMatches();
+        //    player.TotalMatch = _playerService.MCount(user);
+        //    player.TotalWins = _playerService.TotalW(user);
+        //    player.TotalLosses = _playerService.TotalL(user);
+        //    player.WinPerC = _playerService.WinP(user);
+        //    player.KDA = _playerService.GetKDA(user);
+        //    player.AvgVision = _playerService.AVGVi(user);
+
+
+        //    return Page();
+        //}
+        public IActionResult OnGet()
         {
             user = _userService.GetUserByUsername(User.Identity.Name);
             if (user == null)
             {
                 return NotFound("User Not Found.");
             }
-            UserName = user.UserName;
-            UserID = user.UserPlayerID;
-            ProfilePic = user.ProfileSplash;
+            int id = user.UserPlayerID;
+            player = _playerService.GetPlayer(id);
             matches = _matchService.GetMatches();
-            TotalMatch = _playerService.MCount(user);
-            TotalWins = _playerService.TotalW(user);
-            TotalLosses = _playerService.TotalL(user);
-            WinPerC = _playerService.WinP(user);
-            KDA = _playerService.GetKDA(user);
-            AvgVision = _playerService.AVGVi(user);
+            player.TotalMatch = _playerService.MCount(player);
+            player.TotalWins = _playerService.TotalW(player);
+            player.TotalLosses = _playerService.TotalL(player);
+            player.WinPerC = _playerService.WinP(player);
+            player.KDA = _playerService.GetKDA(player);
+            player.AvgVision = _playerService.AVGVi(player);
 
 
             return Page();
         }
-
 
     }
 }

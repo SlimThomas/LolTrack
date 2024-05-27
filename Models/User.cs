@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LolTrack.Models
 {
-    public class User : Player 
+    public class User
     {
 
         [Key]
