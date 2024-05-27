@@ -57,9 +57,7 @@ namespace LolTrack.Pages.MyProfile
             int id = user.UserPlayerID;
             player = _playerService.GetPlayer(id);
             matches = _matchService.GetMatches();
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
            
             TotalMatch = _playerService.MCount(user);
             TotalWins = _playerService.TotalW(user);
@@ -67,18 +65,14 @@ namespace LolTrack.Pages.MyProfile
             WinPerC = _playerService.WinP(user);
             KDA = _playerService.GetKDA(user);
             AvgVision = _playerService.AVGVi(user);
-=======
->>>>>>> Stashed changes
+
             player.TotalMatch = _playerService.MCount(player);
             player.TotalWins = _playerService.TotalW(player);
             player.TotalLosses = _playerService.TotalL(player);
             player.WinPerC = _playerService.WinP(player);
             player.KDA = _playerService.GetKDA(player);
             player.AvgVision = _playerService.AVGVi(player);
-<<<<<<< Updated upstream
-=======
->>>>>>> 43bdd880540aa350a3062a951e14d4b7b86168d9
->>>>>>> Stashed changes
+
 
 
             return Page();
