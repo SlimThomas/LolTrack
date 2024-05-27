@@ -4,16 +4,17 @@
 }
 
 <body>
+    <h1 class="StatBox" style="position: center; margin-top: 10px; margin-left: 10%">Profile</h1>
     <div class="Profile-block">
         
-            <div class="profile-container">
+            <div class="profile-container" style="center">
                 <img src="/Images/@Model.user.ProfileSplash" class="profile-pic" />
                  <div class="profile-details">
                     <h1 style="color:#efdc9e;">Welcome, @Model.user.UserName</h1>
                     <p style="color: #efdc9e">Ladder rank: 357,427 (49.67% of top)</p>
 
                 <div class="detailcontainer">
-                    <table class="StatBox" style="width: 15%">
+                    <table class="StatBoxMyProfile" style="width: 15%">
                         @if (Model.user.UserID != null)
                                     {
                             <thead>
@@ -52,7 +53,7 @@
                     </table>
                    
 
-                    <div class="detailblock" style="width:650px; height:100%">
+                    <div class="detailblock" style="width:950px; height:80%">
                         <table class="StatBox">
                             <thead>
                                 <tr class="backtbn">
@@ -119,4 +120,8 @@
         
     </div>
    
+    <div>
+        <img src="~/Images/Ad4MyProfile.png" alt="Ad4" class="Ad4" />
+    </div>
+
 </body>

@@ -590,6 +590,13 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     margin-left: auto;
     margin-right: auto;
 }
+.Ad4 {
+    position: absolute; 
+    height: 200px; 
+    width: 300px; 
+    left: 900px; 
+    top: 300px; 
+}
 
 .standard-page {
     height: 1000px; /* Define the standard height */
@@ -618,7 +625,8 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-    padding-top: 10px;
+    padding-top: 100px;
+    margin-top: 50px; 
 }
 
 .abiSplash { /*Champ Detail*/
@@ -661,11 +669,14 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
     border: 5px ridge #efdc9e;
     color: #c6ac70;
-    padding-left: 20px;
+    /*padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 10px;
-    padding-top: 20px;
+    padding-top: 20px;*/
+    padding: 20px;
     margin-top: 20px; 
+    align-items: center; 
+    justify-content: center; 
 }
 
 .detailcontainer { /*Player Profile*/
@@ -676,7 +687,8 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
 .detailblock { /*Player Profile*/
     position: absolute;
     width: auto;
-    height: 1200px;
+
+    height: 200px;
     background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
     border: 5px ridge #efdc9e;
     color: #c6ac70;
@@ -692,10 +704,10 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     color: #efdc9e;
     font-weight: bold;
     border: 3px solid #efdc9e;
-    position: absolute;
-    width: auto;
-    /*padding: px;
-    margin-bottom: px;*/
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
     text-align: center;
 }
 .MatchL {
@@ -706,7 +718,7 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     color: #efdc9e;
     padding: 10px;
     width: auto;
-    height: auto;
+    height: 50px;
     text-align: center;
     text-decoration: none;
 }
