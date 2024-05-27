@@ -79,6 +79,7 @@ namespace LolTrack.Services
 			//if(str == null)
 			//{
 			//}
+			List<Player> list = new List<Player>();
 			if (str != null)
 			{
 				var NameSearchQuery = from p in _players
@@ -86,7 +87,7 @@ namespace LolTrack.Services
 									  select p;
 				return NameSearchQuery;
 			}
-			return null;
+			return list;
 		}
 
 		public int MCount(Player player)
