@@ -313,9 +313,16 @@ footer {
     text-align: center;
     display: flex; 
     justify-content: center; 
-    align-items: center; 
+    align-items: center;  
     top: 300px; 
     
+}
+.input-group .mb-3 {
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
 }
 
 .search-form {
@@ -331,8 +338,10 @@ footer {
     padding: 10px;
     font-size: 16px;
     border: none;
+    border-radius: 5px; 
     outline: none;
     width: 300px; 
+
 }
 
 .search-button {
@@ -539,6 +548,12 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     box-sizing: border-box;
     padding: 10px;
     max-width: calc(25% - 20px);
+    border: 5px ridge #efdc9e; 
+    border-radius: 2px; 
+    overflow: hidden; 
+    padding: 0; 
+    margin: 10px; 
+    
 }
 
 .square1 {

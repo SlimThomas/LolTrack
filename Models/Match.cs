@@ -22,7 +22,17 @@
         Aatrox,
         Annie,
         Ksante,
-        Renekton
+        Renekton, 
+        Braum, 
+        Caitlyn, 
+        Diana, 
+        Garen,
+        Heimerdinger, 
+        Illaoi, 
+        Leona, 
+        Poppy,
+        Teemo,
+        Yorick
     }
 
     public enum Runes

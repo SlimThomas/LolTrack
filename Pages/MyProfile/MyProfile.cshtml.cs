@@ -16,7 +16,7 @@ namespace LolTrack.Pages.MyProfile
         public User user { get; set; }
         public Player player { get; set; }
         public Match userMatchID { get; set; }
-        public List<Player> players { get; set; }
+        
         public List<Match> matches { get; set; }
 
         public MyProfileModel(UserService userService, MatchService matchService, PlayerService playerService)
@@ -57,15 +57,6 @@ namespace LolTrack.Pages.MyProfile
             int id = user.UserPlayerID;
             player = _playerService.GetPlayer(id);
             matches = _matchService.GetMatches();
-
-           
-            TotalMatch = _playerService.MCount(user);
-            TotalWins = _playerService.TotalW(user);
-            TotalLosses = _playerService.TotalL(user);
-            WinPerC = _playerService.WinP(user);
-            KDA = _playerService.GetKDA(user);
-            AvgVision = _playerService.AVGVi(user);
-
             player.TotalMatch = _playerService.MCount(player);
             player.TotalWins = _playerService.TotalW(player);
             player.TotalLosses = _playerService.TotalL(player);
