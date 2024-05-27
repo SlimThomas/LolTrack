@@ -687,7 +687,6 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
 .detailblockMyProfile { /*Player Profile*/
     position: absolute;
     width: auto;
-
     height: 200px;
     background: linear-gradient(#486144ff, #374f44ff, #1e2d24ff);
     border: 5px ridge #efdc9e;
