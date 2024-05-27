@@ -711,5 +711,17 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
     text-decoration: none;
 }
 
+.StatBox {
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4);
+    color: #efdc9e;
+    font-weight: bold;
+    border: 3px solid #efdc9e;
+    position: relative;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
 
 
