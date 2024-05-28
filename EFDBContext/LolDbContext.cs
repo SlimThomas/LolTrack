@@ -7,7 +7,15 @@ namespace LolTrack.EFDBContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("@Data Source = mysql24.unoeuro.com; Initial Catalog =LolDb; Integrated security = True; Connect Timeout=30; Encrypt=False");
+            options.UseSqlServer(@"Data Source = mysql24.unoeuro.com; 
+                Initial Catalog =LolDb; 
+                Integrated security = True; 
+                Connect Timeout=30; 
+                User ID = mvstm_dk;
+                Trust Server Certificate = False; 
+                Application Intent = ReadWrite; 
+                Multi Subnet Failover = False; 
+                Encrypt=False");
         }
 
         public DbSet<Ability> Abilities { get; set; }
@@ -18,6 +26,9 @@ namespace LolTrack.EFDBContext
         public DbSet<Rune> Runes { get; set; }
         public DbSet<SSpell> SSpells { get; set; }
         public DbSet<User> Users { get; set; }
+        
+
+       
 
 
     }

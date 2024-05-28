@@ -12,6 +12,7 @@ namespace LolTrack.Models
 		[Required]
         public string RunePageName  { get; set; }
 		[Required]
+		[NotMapped]
         public Enum RuneType { get; set; }
 		[Required]
         public string RuneDesc  { get; set; }
