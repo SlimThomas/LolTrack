@@ -8,11 +8,15 @@ namespace LolTrack.Services
     public class MatchService
     {
         private List<Match> _matches; 
+        private DbService _dbService;
         
 
-        public MatchService()
+        public MatchService(DbService dbService)
         {
             _matches = MockMatch.GetMockMatches();
+            _dbService = dbService;
+            _dbService.SaveMatches(_matches);
+            _matches = _dbService.GetMatches().Result;
         }
 
       

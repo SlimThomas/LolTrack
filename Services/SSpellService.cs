@@ -5,12 +5,15 @@ namespace LolTrack.Services
 {
     public class SSpellService
     {
-        private List<SSpell> _SSpells; 
+        private List<SSpell> _SSpells;
+        private DbService _dbService;
 
-
-        public SSpellService()
+        public SSpellService(DbService dbService)
         {
             _SSpells = MockSSpell.GetMockSSpells();
+            _dbService = dbService;
+            _dbService.SaveSSpels(_SSpells);
+            _SSpells = _dbService.GetSspells().Result;
         }
 
         public List<SSpell> GetSspells()

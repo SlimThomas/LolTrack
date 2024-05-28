@@ -1,15 +1,21 @@
 ﻿using LolTrack.MockData;
 using LolTrack.Models;
+using System.Data.Common;
 
 namespace LolTrack.Services
 {
     public class AbilityService
     {
         private List<Ability> _abilities;
+        private DbService _dbService;
 
-        public AbilityService()
+        public AbilityService(DbService dbService)
         {
             _abilities = MockAbility.GetMockAbilities();
+            _dbService = dbService;
+            _dbService.SaveAbilities(_abilities); 
+            _abilities = _dbService.GetAbilities().Result;
+
         }
         public void AddAbility(Ability abi)
         {

@@ -6,11 +6,15 @@ namespace LolTrack.Services
 {
     public class UserService
     {
-        public List<User> _users { get; } 
+        public List<User> _users { get; }
+        private DbService _dbService; 
 
-        public UserService()
+        public UserService(DbService dbService)
         {
             _users = MockUser.GetMockUser(); 
+            _dbService = dbService;
+            _dbService.SaveUsers(_users);
+            _users = _dbService.GetUsers().Result;
 
         }
 

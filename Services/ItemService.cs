@@ -5,14 +5,21 @@ namespace LolTrack.Services
 {
 	public class ItemService
 	{
+		private DbService _dbService; 
 		private List<Item> _items;
-		public ItemService()
+		public ItemService(DbService dbService)
 		{
 			_items = MockItem.GetMockItems();
+			_dbService = dbService;
+			_dbService.SaveItems(_items); 
+			_items = _dbService.GetItems().Result;
+			
+
 		}
 		public void Add(Item item)
 		{
 			_items.Add(item);
+			_dbService.SaveItems
 		}
 		public Item GetItem(int id)
 		{

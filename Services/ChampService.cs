@@ -7,10 +7,14 @@ namespace LolTrack.Services
 	public class ChampService
 	{
 		private List<Champion> _champions;
+		private DbService _dbService;
 
-		public ChampService()
+		public ChampService(DbService dbService)
 		{
 			_champions = MockChamp.GetMockChamps();
+			_dbService = dbService;
+			_dbService.SaveChampions(_champions);
+			_champions = _dbService.GetChampions().Result; 
 		}
 		public void AddChamp(Champion champ)
 		{

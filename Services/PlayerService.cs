@@ -10,11 +10,15 @@ namespace LolTrack.Services
 	{
 		private List<Player> _players;
 		private List<Match> _matches;
+		private DbService _dbService; 
 
-		public PlayerService()
+		public PlayerService(DbService dbService)
 		{
 			_matches = MockMatch.GetMockMatches();
 			_players = MockPlayer.GetMockPlayer();
+			_dbService = dbService;
+			_dbService.SavePlayers(_players);
+			_players = _dbService.GetPlayers().Result;
 		}
 
 		public void AddPlayer(Player player)

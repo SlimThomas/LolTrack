@@ -5,11 +5,15 @@ namespace LolTrack.Services
 {
     public class RuneService
     {
-        private List<Rune> _runes; 
+        private List<Rune> _runes;
+        private DbService _dbService; 
 
-        public RuneService() 
+        public RuneService(DbService dbService) 
         {
             _runes = MockRunes.GetMockRunes();
+            _dbService = dbService;
+            _dbService.SaveRunes(_runes);
+            _runes = _dbService.GetRunes().Result;
         }
 
         public void AddRunes(Rune rune)
