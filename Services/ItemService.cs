@@ -19,7 +19,8 @@ namespace LolTrack.Services
 		public void Add(Item item)
 		{
 			_items.Add(item);
-			_dbService.SaveItems
+            _dbService.SaveItems(_items);
+
 		}
 		public Item GetItem(int id)
 		{
