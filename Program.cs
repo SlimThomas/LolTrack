@@ -16,6 +16,7 @@ builder.Services.AddSingleton<SSpellService, SSpellService>();
 builder.Services.AddSingleton<PlayerService, PlayerService>();
 builder.Services.AddSingleton<MatchService, MatchService>();
 builder.Services.AddSingleton<AbilityService, AbilityService>();
+builder.Services.AddSingleton<DbService, DbService>();
 
 
 builder.Services.Configure<CookiePolicyOptions>(options => {
