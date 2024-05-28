@@ -12,7 +12,6 @@ namespace LolTrack.Models
 
         [Required(ErrorMessage = "Username må maks være på 20 tegn"), StringLength(20)]
         public string UserName { get; set; }
-        public Player player { get; set; }
         public int UserPlayerID { get; set; }
         [Required]
         public string Password { get; set; }
