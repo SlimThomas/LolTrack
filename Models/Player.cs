@@ -25,11 +25,6 @@ namespace LolTrack.Models
         public int TotalLosses { get; set; }
 		[Required]
         public double AvgVision { get; set; }
-		
-        public Match MostPlayedChamp { get; set; }
-		
-        public Match MostPlayedLane { get; set; }
-		public Match match { get; set; }
 
 		public Player(int playerID, string playerName)
 		{

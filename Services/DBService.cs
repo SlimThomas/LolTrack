@@ -6,42 +6,42 @@ namespace LolTrack.Services
 {
     public class DbService
     {
-        public async Task<Player> GetPlayers()
+        public async Task<List<Player>> GetPlayers()
         {
             using (var context = new LolDbContext())
             {
                 return await context.Players.ToListAsync();
             }
         }
-        public async Task<Ability> GetAbilities()
+        public async Task<List<Ability>> GetAbilities()
         {
             using (var context = new LolDbContext())
             {
                 return await context.Abilities.ToListAsync();
             }
         }
-        public async Task<Champion> GetChampions()
+        public async Task<List<Champion>> GetChampions()
         {
             using (var context = new LolDbContext())
             {
                 return await context.Champions.ToListAsync();
             }
         }
-        public async Task<Match> GetMatches()
+        public async Task<List<Match>> GetMatches()
         {
             using (var context = new LolDbContext())
             {
                 return await context.Matches.ToListAsync();
             }
         }
-        public async Task<Rune> GetRunes()
+        public async Task<List<Rune>> GetRunes()
         {
             using (var context = new LolDbContext())
             {
                 return await context.Runes.ToListAsync();
             }
         }
-        public async Task<SSpell> GetSspells()
+        public async Task<List<SSpell>> GetSspells()
         {
             using (var context = new LolDbContext())
             {
@@ -132,7 +132,7 @@ namespace LolTrack.Services
             {
                 foreach (Ability abi in abilities)
                 {
-                    context.Items.Add(abi);
+                    context.Abilities.Add(abi);
                     context.SaveChanges();
                 }
                 context.SaveChanges();
@@ -144,7 +144,7 @@ namespace LolTrack.Services
             {
                 foreach (Champion champ in champs)
                 {
-                    context.Items.Add(champ);
+                    context.Champions.Add(champ);
                     context.SaveChanges();
                 }
                 context.SaveChanges();
@@ -156,7 +156,7 @@ namespace LolTrack.Services
             {
                 foreach (Match m in matches)
                 {
-                    context.Items.Add(m);
+                    context.Matches.Add(m);
                     context.SaveChanges();
                 }
                 context.SaveChanges();
@@ -168,7 +168,7 @@ namespace LolTrack.Services
             {
                 foreach (Player p in players)
                 {
-                    context.Items.Add(p);
+                    context.Players.Add(p);
                     context.SaveChanges();
                 }
                 context.SaveChanges();
@@ -178,9 +178,9 @@ namespace LolTrack.Services
         {
             using (var context = new LolDbContext())
             {
-                foreach (Rune r in runes)
+                foreach (Rune rune in runes)
                 {
-                    context.Items.Add(r);
+                    context.Runes.Add(rune);
                     context.SaveChanges();
                 }
                 context.SaveChanges();
@@ -192,7 +192,7 @@ namespace LolTrack.Services
             {
                 foreach (SSpell sS in sSpells)
                 {
-                    context.Items.Add(sS);
+                    context.SSpells.Add(sS);
                     context.SaveChanges();
                 }
                 context.SaveChanges();
@@ -202,9 +202,9 @@ namespace LolTrack.Services
         {
             using (var context = new LolDbContext())
             {
-                foreach (Item item in items)
+                foreach (Item i in items)
                 {
-                    context.Items.Add(item);
+                    context.Items.Add(i);
                     context.SaveChanges();
                 }
                 context.SaveChanges();
