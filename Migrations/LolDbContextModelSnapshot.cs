@@ -169,15 +169,6 @@ namespace LolTrack.Migrations
                     b.Property<double>("KDA")
                         .HasColumnType("float");
 
-                    b.Property<int>("MatchID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MostPlayedChampMatchID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MostPlayedLaneMatchID")
-                        .HasColumnType("int");
-
                     b.Property<string>("PlayerName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -195,12 +186,6 @@ namespace LolTrack.Migrations
                         .HasColumnType("float");
 
                     b.HasKey("PlayerID");
-
-                    b.HasIndex("MatchID");
-
-                    b.HasIndex("MostPlayedChampMatchID");
-
-                    b.HasIndex("MostPlayedLaneMatchID");
 
                     b.ToTable("Players");
                 });
@@ -256,9 +241,6 @@ namespace LolTrack.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PlayerID")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProfileSplash")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -272,8 +254,6 @@ namespace LolTrack.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("UserID");
-
-                    b.HasIndex("PlayerID");
 
                     b.ToTable("Users");
                 });
@@ -294,44 +274,6 @@ namespace LolTrack.Migrations
                     b.HasOne("LolTrack.Models.User", null)
                         .WithMany("Matches")
                         .HasForeignKey("UserID");
-                });
-
-            modelBuilder.Entity("LolTrack.Models.Player", b =>
-                {
-                    b.HasOne("LolTrack.Models.Match", "match")
-                        .WithMany()
-                        .HasForeignKey("MatchID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LolTrack.Models.Match", "MostPlayedChamp")
-                        .WithMany()
-                        .HasForeignKey("MostPlayedChampMatchID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("LolTrack.Models.Match", "MostPlayedLane")
-                        .WithMany()
-                        .HasForeignKey("MostPlayedLaneMatchID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("MostPlayedChamp");
-
-                    b.Navigation("MostPlayedLane");
-
-                    b.Navigation("match");
-                });
-
-            modelBuilder.Entity("LolTrack.Models.User", b =>
-                {
-                    b.HasOne("LolTrack.Models.Player", "player")
-                        .WithMany()
-                        .HasForeignKey("PlayerID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("player");
                 });
 
             modelBuilder.Entity("LolTrack.Models.User", b =>

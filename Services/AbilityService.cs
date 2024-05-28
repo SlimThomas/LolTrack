@@ -13,8 +13,8 @@ namespace LolTrack.Services
         {
             _abilities = MockAbility.GetMockAbilities();
             _dbService = dbService;
-            _dbService.SaveAbilities(_abilities); 
-            _abilities = _dbService.GetAbilities().Result;
+            //_dbService.SaveAbilities(_abilities); 
+            //_abilities = _dbService.GetAbilities().Result;
 
         }
         public void AddAbility(Ability abi)

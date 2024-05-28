@@ -11,15 +11,15 @@ namespace LolTrack.Services
 		{
 			_items = MockItem.GetMockItems();
 			_dbService = dbService;
-			_dbService.SaveItems(_items); 
-			_items = _dbService.GetItems().Result;
-			
+			//_dbService.SaveItems(_items); 
+			//_items = _dbService.GetItems().Result;
+
 
 		}
 		public void Add(Item item)
 		{
 			_items.Add(item);
-            _dbService.SaveItems(_items);
+           
 
 		}
 		public Item GetItem(int id)

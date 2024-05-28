@@ -12,8 +12,8 @@ namespace LolTrack.Services
         {
             _runes = MockRunes.GetMockRunes();
             _dbService = dbService;
-            _dbService.SaveRunes(_runes);
-            _runes = _dbService.GetRunes().Result;
+            //_dbService.SaveRunes(_runes);
+            //_runes = _dbService.GetRunes().Result;
         }
 
         public void AddRunes(Rune rune)

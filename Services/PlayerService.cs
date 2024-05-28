@@ -17,8 +17,8 @@ namespace LolTrack.Services
 			_matches = MockMatch.GetMockMatches();
 			_players = MockPlayer.GetMockPlayer();
 			_dbService = dbService;
-			_dbService.SavePlayers(_players);
-			_players = _dbService.GetPlayers().Result;
+			//_dbService.SavePlayers(_players);
+			//_players = _dbService.GetPlayers().Result;
 		}
 
 		public void AddPlayer(Player player)

@@ -13,8 +13,8 @@ namespace LolTrack.Services
 		{
 			_champions = MockChamp.GetMockChamps();
 			_dbService = dbService;
-			_dbService.SaveChampions(_champions);
-			_champions = _dbService.GetChampions().Result; 
+			//_dbService.SaveChampions(_champions);
+			//_champions = _dbService.GetChampions().Result; 
 		}
 		public void AddChamp(Champion champ)
 		{

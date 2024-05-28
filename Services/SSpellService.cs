@@ -12,8 +12,8 @@ namespace LolTrack.Services
         {
             _SSpells = MockSSpell.GetMockSSpells();
             _dbService = dbService;
-            _dbService.SaveSSpels(_SSpells);
-            _SSpells = _dbService.GetSspells().Result;
+            //_dbService.SaveSSpels(_SSpells);
+            //_SSpells = _dbService.GetSspells().Result;
         }
 
         public List<SSpell> GetSspells()

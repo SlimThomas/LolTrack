@@ -8,13 +8,9 @@ namespace LolTrack.EFDBContext
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             options.UseSqlServer(@"Data Source = mysql24.unoeuro.com; 
-                Initial Catalog =LolDb; 
+                Initial Catalog = LolDb; 
                 Integrated security = True; 
-                Connect Timeout=30; 
-                User ID = mvstm_dk;
-                Trust Server Certificate = False; 
-                Application Intent = ReadWrite; 
-                Multi Subnet Failover = False; 
+                Connect Timeout=30;
                 Encrypt=False");
         }
 

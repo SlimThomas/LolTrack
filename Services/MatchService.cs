@@ -15,8 +15,8 @@ namespace LolTrack.Services
         {
             _matches = MockMatch.GetMockMatches();
             _dbService = dbService;
-            _dbService.SaveMatches(_matches);
-            _matches = _dbService.GetMatches().Result;
+            //_dbService.SaveMatches(_matches);
+            //_matches = _dbService.GetMatches().Result;
         }
 
       

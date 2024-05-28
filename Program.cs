@@ -1,4 +1,5 @@
 
+using LolTrack.EFDBContext;
 using LolTrack.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -16,6 +17,7 @@ builder.Services.AddSingleton<SSpellService, SSpellService>();
 builder.Services.AddSingleton<PlayerService, PlayerService>();
 builder.Services.AddSingleton<MatchService, MatchService>();
 builder.Services.AddSingleton<AbilityService, AbilityService>();
+builder.Services.AddDbContext<LolDbContext>();
 builder.Services.AddSingleton<DbService, DbService>();
 
 

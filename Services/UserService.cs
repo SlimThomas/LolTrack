@@ -11,10 +11,10 @@ namespace LolTrack.Services
 
         public UserService(DbService dbService)
         {
-            _users = MockUser.GetMockUser(); 
+            _users = MockUser.GetMockUser();
             _dbService = dbService;
-            _dbService.SaveUsers(_users);
-            _users = _dbService.GetUsers().Result;
+            //_dbService.SaveUsers(_users);
+            //_users = _dbService.GetUsers().Result;
 
         }
 

@@ -40,6 +40,24 @@ namespace LolTrack.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Players",
+                columns: table => new
+                {
+                    PlayerID = table.Column<int>(type: "int", nullable: false),
+                    PlayerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TotalWins = table.Column<int>(type: "int", nullable: false),
+                    WinPerC = table.Column<double>(type: "float", nullable: false),
+                    KDA = table.Column<double>(type: "float", nullable: false),
+                    TotalMatch = table.Column<int>(type: "int", nullable: false),
+                    TotalLosses = table.Column<int>(type: "int", nullable: false),
+                    AvgVision = table.Column<double>(type: "float", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Players", x => x.PlayerID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Runes",
                 columns: table => new
                 {
@@ -64,6 +82,22 @@ namespace LolTrack.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SSpells", x => x.SSpellID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    UserID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    UserPlayerID = table.Column<int>(type: "int", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProfileSplash = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.UserID);
                 });
 
             migrationBuilder.CreateTable(
@@ -111,68 +145,11 @@ namespace LolTrack.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Matches", x => x.MatchID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Players",
-                columns: table => new
-                {
-                    PlayerID = table.Column<int>(type: "int", nullable: false),
-                    PlayerName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TotalWins = table.Column<int>(type: "int", nullable: false),
-                    WinPerC = table.Column<double>(type: "float", nullable: false),
-                    KDA = table.Column<double>(type: "float", nullable: false),
-                    TotalMatch = table.Column<int>(type: "int", nullable: false),
-                    TotalLosses = table.Column<int>(type: "int", nullable: false),
-                    AvgVision = table.Column<double>(type: "float", nullable: false),
-                    MostPlayedChampMatchID = table.Column<int>(type: "int", nullable: false),
-                    MostPlayedLaneMatchID = table.Column<int>(type: "int", nullable: false),
-                    MatchID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Players", x => x.PlayerID);
                     table.ForeignKey(
-                        name: "FK_Players_Matches_MatchID",
-                        column: x => x.MatchID,
-                        principalTable: "Matches",
-                        principalColumn: "MatchID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Players_Matches_MostPlayedChampMatchID",
-                        column: x => x.MostPlayedChampMatchID,
-                        principalTable: "Matches",
-                        principalColumn: "MatchID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Players_Matches_MostPlayedLaneMatchID",
-                        column: x => x.MostPlayedLaneMatchID,
-                        principalTable: "Matches",
-                        principalColumn: "MatchID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    UserID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    PlayerID = table.Column<int>(type: "int", nullable: false),
-                    UserPlayerID = table.Column<int>(type: "int", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfileSplash = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users", x => x.UserID);
-                    table.ForeignKey(
-                        name: "FK_Users_Players_PlayerID",
-                        column: x => x.PlayerID,
-                        principalTable: "Players",
-                        principalColumn: "PlayerID",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Matches_Users_UserID",
+                        column: x => x.UserID,
+                        principalTable: "Users",
+                        principalColumn: "UserID");
                 });
 
             migrationBuilder.CreateIndex(
@@ -184,47 +161,22 @@ namespace LolTrack.Migrations
                 name: "IX_Matches_UserID",
                 table: "Matches",
                 column: "UserID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Players_MatchID",
-                table: "Players",
-                column: "MatchID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Players_MostPlayedChampMatchID",
-                table: "Players",
-                column: "MostPlayedChampMatchID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Players_MostPlayedLaneMatchID",
-                table: "Players",
-                column: "MostPlayedLaneMatchID");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_PlayerID",
-                table: "Users",
-                column: "PlayerID");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Matches_Users_UserID",
-                table: "Matches",
-                column: "UserID",
-                principalTable: "Users",
-                principalColumn: "UserID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Matches_Users_UserID",
-                table: "Matches");
-
             migrationBuilder.DropTable(
                 name: "Champions");
 
             migrationBuilder.DropTable(
                 name: "Items");
+
+            migrationBuilder.DropTable(
+                name: "Matches");
+
+            migrationBuilder.DropTable(
+                name: "Players");
 
             migrationBuilder.DropTable(
                 name: "Runes");
@@ -237,12 +189,6 @@ namespace LolTrack.Migrations
 
             migrationBuilder.DropTable(
                 name: "Users");
-
-            migrationBuilder.DropTable(
-                name: "Players");
-
-            migrationBuilder.DropTable(
-                name: "Matches");
         }
     }
 }
