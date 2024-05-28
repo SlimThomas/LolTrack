@@ -22,7 +22,7 @@ namespace LolTrack.Services
 			}
 			return null;
 		}
-		public void UpdateChamp(Item item)
+		public void UpdateItem(Item item)
 		{
 			if (item != null)
 			{
@@ -33,7 +33,6 @@ namespace LolTrack.Services
 						i.ItemDesc = item.ItemDesc;
 						i.ItemName = item.ItemName;
 						i.ItemValue = item.ItemValue;
-						i.ItemType = item.ItemType;
 					}
 				}
 			}

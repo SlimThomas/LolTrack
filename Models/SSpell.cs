@@ -1,4 +1,7 @@
-﻿namespace LolTrack.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace LolTrack.Models
 {
     public enum SSpells
     {
@@ -14,9 +17,13 @@
     }
     public class SSpell
     {
-
+        [Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SSpellID { get; set; }
+        [Required]
         public SSpells SpellType { get; set; }
+        [Required]
         public string SpellDesc { get; set; }
         public string SSpellSplash { get; set; }
 

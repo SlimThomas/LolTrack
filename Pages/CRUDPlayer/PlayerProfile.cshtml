@@ -2,7 +2,11 @@
 @model LolTrack.Pages.CRUDPlayer.PlayerProfileModel
 @{
 }
-<div class="col-4" style=" position:center; margin-top: 10px; margin-left: 10%">
+<head>
+    <h1 class="StatBox" style="position:center; margin-top: 10px; margin-left: 10%">Player Profile</h1>
+    <a class="backbtn" type="button" title="back" style="margin-left: 45%" asp-page="PlayerCompare" asp-route-id="@Model.player.PlayerID">Compare</a>
+</head>
+<div class="col-4" style="margin-top:10px; margin-left: 33%">
 <form method="post" class="form-inline">
     <div class="input-group mb-3">
         <input asp-for="SearchStr" class="form-control mr-1" placeholder="Enter Search" />
@@ -11,7 +15,7 @@
 </form>
     </div>
 <div class="detailcontainer">
-<table class="StatBox" style="width: 15%">
+    <table class="StatBox" style="width: 15%; margin-left: 10%;">
         @if (Model.player.PlayerID != null) 
         {
             <thead>
@@ -48,10 +52,10 @@
         </tbody>
     }
 </table>
-    <a class="backbtn" type="button" title="back" asp-page="PlayerCompare" asp-route-id="@Model.player.PlayerID">Compare</a>
 
-    <div class="detailblock" style="width:650px; height:100%">
-<table class="StatBox">
+
+    <div>
+        <table class="StatBox" style="width: 15%; left:33%; bottom: 280px;">
         <thead>
             <tr class="backtbn">
             <th>Kills</th>
@@ -74,7 +78,7 @@
                         
                     
             <tbody>
-            <tr class="MatchL" style="background: linear-gradient(green, darkgreen)">
+                <tr class="MatchL" style="background: linear-gradient(green, darkgreen)">
                 <td>@p.Kills</td>
                 <td>@p.Deaths</td>
                 <td>@p.Assists</td>
@@ -90,7 +94,7 @@
         @if(p.Win != true)
         {
             <tbody>
-                <tr class="MatchL" style="background: linear-gradient(red, maroon)">
+                            <tr class="MatchL" style="background: linear-gradient(red, maroon)">
                     <td>@p.Kills</td>
                     <td>@p.Deaths</td>
                     <td>@p.Assists</td>
@@ -108,36 +112,4 @@
 </table>
 </div>
 </div>
-<style>
-    .MatchL {
-        position: relative;
-        border: 3px groove #efdc9e;
-        border-radius: 10px;
-        font-size: 20px;
-        color: #efdc9e;
-        padding: 10px;
-        width: auto;
-        height: auto;
-        text-align: center;
-        text-decoration: none;
-    }
-    .detailcontainer {
-        position: relative;
-        margin-top: 50px;
-    }
-
-
-    .StatBox {
-        background-color: rgb(0,0,0);
-        background-color: rgba(0,0,0, 0.4);
-        color: #efdc9e;
-        font-weight: bold;
-        border: 3px solid #efdc9e;
-        position: relative;
-        width: 80%;
-        padding: 20px;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-</style>
 

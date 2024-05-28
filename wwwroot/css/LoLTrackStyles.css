@@ -592,10 +592,10 @@ label[for='UserName'], label[for='Password'] { /*Login Pagen*/
 }
 .Ad4 {
     position: absolute; 
-    height: 200px; 
-    width: 300px; 
-    left: 900px; 
-    top: 300px; 
+    height: 300px; 
+    width: 400px; 
+    left: 825px; 
+    top: 250px; 
 }
 
 .standard-page {

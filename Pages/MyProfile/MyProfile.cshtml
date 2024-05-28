@@ -4,17 +4,14 @@
 }
 
 <body>
-    <h1 class="StatBox" style="position: center; margin-top: 10px; margin-left: 10%">Profile</h1>
-    <div class="Profile-block">
+    <h1 class="StatBox" style="position: center; margin-top: 10px; margin-left: 10%">My Profile</h1>
         
             <div class="profile-container" style="center">
-                <img src="/Images/@Model.user.ProfileSplash" class="profile-pic" />
                  <div class="profile-details">
-                    <h1 style="color:#efdc9e;">Welcome, @Model.user.UserName</h1>
-                    <p style="color: #efdc9e">Ladder rank: 357,427 (49.67% of top)</p>
+            <h1 class="StatBox" style="color:#efdc9e; margin-left:15%">Welcome, @Model.user.UserName <br /><img src="/Images/@Model.user.ProfileSplash" class="profile-pic"<br /><br>Ladder rank: 357,427 (49.67% of top)</br></h1>
 
                 <div class="detailcontainer">
-                    <table class="StatBoxMyProfile" style="width: 15%">
+                    <table class="StatBoxMyProfile" style="width: 15%; margin-left:15%">
                         @if (Model.user.UserID != null)
                                     {
                             <thead>
@@ -53,8 +50,7 @@
                     </table>
                    
 
-                    <div class="detailblockMyProfile" style="width:950px; height:80%">
-                        <table class="StatBoxMyProfile">
+                        <table class="StatBoxMyProfile" style="left:50%; bottom: 280px;">
                             <thead>
                                 <tr class="backtbn">
                                     <th>Kills</th>
@@ -109,7 +105,6 @@
                                 }
                             }
                         </table>
-                    </div>
                 </div>
 
                  </div>
@@ -118,8 +113,7 @@
 
             </div>
         
-    </div>
-   
+     
     <div>
         <img src="~/Images/Ad4MyProfile.png" alt="Ad4" class="Ad4" />
     </div>

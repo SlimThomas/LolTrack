@@ -1,4 +1,7 @@
-﻿namespace LolTrack.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace LolTrack.Models
 {
     public enum LaneType
     {
@@ -46,26 +49,36 @@
 
     public class Match
     {
+        [Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int MatchID { get; set; }
         public int PlayerMatchID {  get; set; }
         public int UserMatchID { get; set; }
+        [Required]
         public bool Win { get; set; }
+        [Required]
         public int Kills { get; set; }
+        [Required]
         public int Deaths { get; set; }
+        [Required]
         public int Assists { get; set; }
+        [Required]
         public double KDA { get; set; }
+        [Required]
         public int Visionscore { get; set; }
+        [Required]
         public int Minions { get; set; }
+        [Required]
         public LaneType LaneType { get; set; }
         public Items Items { get; set; }
+        [Required]
         public Champions Champions { get; set; }
+        [Required]
         public Runes Runes { get; set; }
+        [Required]
         public SSpells SSpells { get; set; }
-
-        public int UserID { get; set; }
         public User User { get; set; }
-
-        public int PlayerID { get; set; }
         public Player Player { get; set; }
 
 
