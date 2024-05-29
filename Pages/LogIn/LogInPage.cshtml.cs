@@ -50,7 +50,7 @@ namespace LolTrack.Pages.LogIn
 
                         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
-                        return RedirectToPage("/Index"); 
+                        return RedirectToPage("/Index");    
 
                     }
                     
