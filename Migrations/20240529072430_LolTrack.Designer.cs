@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LolTrack.Migrations
 {
     [DbContext(typeof(LolDbContext))]
-    [Migration("20240528144033_LolTrack")]
+    [Migration("20240529072430_LolTrack")]
     partial class LolTrack
     {
         /// <inheritdoc />
