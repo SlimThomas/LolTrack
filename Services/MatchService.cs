@@ -7,15 +7,19 @@ namespace LolTrack.Services
 {
     public class MatchService
     {
+        private JsonFileService<Match> _fileService;
         private List<Match> _matches; 
         private DbService _dbService;
         
 
-        public MatchService(DbService dbService)
+        public MatchService(DbService dbService, JsonFileService<Match> fileService)
         {
-            _matches = MockMatch.GetMockMatches();
+            //_matches = MockMatch.GetMockMatches();
             _dbService = dbService;
             //_dbService.SaveMatches(_matches);
+            _fileService = fileService;
+            _matches = _fileService.GetJsonObjects().ToList();
+            _fileService.SaveJsonObjects(_matches);
             //_matches = _dbService.GetMatches().Result;
         }
 
@@ -29,6 +33,7 @@ namespace LolTrack.Services
         public void AddMatch(Match match)
         {
             _matches.Add(match);
+            _fileService.SaveJsonObjects(_matches);
         }
 
         // vi ville have en update metode, til hvis vi kom til at create forkert - men i det endelige produkt, ville en update funktion ikke være nødvendig
@@ -56,6 +61,7 @@ namespace LolTrack.Services
             if (matchTobeDeleted != null)
             {
                 _matches.Remove(matchTobeDeleted);
+                _fileService.SaveJsonObjects(_matches);
             }
             return matchTobeDeleted; 
         }

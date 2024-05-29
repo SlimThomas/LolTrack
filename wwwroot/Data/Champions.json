@@ -1,0 +1,114 @@
+[
+  {
+    "ChampionID": 1,
+    "ChampName": "Aatrox",
+    "ChampDesc": "Aatrox is a big red demon guy and he angy",
+    "Difficulty": "Medium Difficulty",
+    "ChampSplash": "Aatrox.jpg"
+  },
+  {
+    "ChampionID": 2,
+    "ChampName": "Annie",
+    "ChampDesc": "Annie is a little girl who is cursed, her best friend is her teddybear",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Annie.jpg"
+  },
+  {
+    "ChampionID": 3,
+    "ChampName": "K\u0027sante",
+    "ChampDesc": "K\u0027sante has big rocks for weapons",
+    "Difficulty": "Medium Difficulty",
+    "ChampSplash": "Ksante.jpg"
+  },
+  {
+    "ChampionID": 4,
+    "ChampName": "Renekton",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Renekton.jpg"
+  },
+  {
+    "ChampionID": 5,
+    "ChampName": "Braum",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Braum.jpg"
+  },
+  {
+    "ChampionID": 6,
+    "ChampName": "Illaoi",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Illaoi.jpg"
+  },
+  {
+    "ChampionID": 7,
+    "ChampName": "Teemo",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Teemo.jpg"
+  },
+  {
+    "ChampionID": 8,
+    "ChampName": "Diana",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Diana.jpg"
+  },
+  {
+    "ChampionID": 9,
+    "ChampName": "Leona",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Leona.jpg"
+  },
+  {
+    "ChampionID": 10,
+    "ChampName": "Garen",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Garen.jpg"
+  },
+  {
+    "ChampionID": 11,
+    "ChampName": "Poppy",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Poppy.jpg"
+  },
+  {
+    "ChampionID": 12,
+    "ChampName": "Heimerdinger",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Heimerdinger.jpg"
+  },
+  {
+    "ChampionID": 13,
+    "ChampName": "Yorick",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Yorick.jpg"
+  },
+  {
+    "ChampionID": 14,
+    "ChampName": "Yuumi",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Yuumi.jpg"
+  },
+  {
+    "ChampionID": 15,
+    "ChampName": "Zeri",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Zeri.jpg"
+  },
+  {
+    "ChampionID": 16,
+    "ChampName": "Caitlyn",
+    "ChampDesc": "He is a big egyptian croc",
+    "Difficulty": "Easy Difficulty",
+    "ChampSplash": "Caitlyn.jpg"
+  }
+]

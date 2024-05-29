@@ -21,7 +21,7 @@ namespace LolTrack.Pages.CRUDMatch
         {
             return Page(); 
         }
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {

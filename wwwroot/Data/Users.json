@@ -1,0 +1,42 @@
+[
+  {
+    "UserID": 0,
+    "UserName": "Martin",
+    "UserPlayerID": 1,
+    "Password": "AQAAAAIAAYagAAAAEKZoXf2JlRqrk37NMA2w9/lw\u002BPPRK44PQd0F/Ta87MtsB5UMGgBNT/ZlR8KY6Cf6FQ==",
+    "ProfileSplash": "MartinProfileSplash.png",
+    "Matches": []
+  },
+  {
+    "UserID": 0,
+    "UserName": "Thomas",
+    "UserPlayerID": 2,
+    "Password": "AQAAAAIAAYagAAAAEJrtga2sHjM2Ai9jQI2uP\u002Bu53Ll9herpucYXrIPj3ube7ZFR/IJMcu7Dj91C85jtkA==",
+    "ProfileSplash": "ThomasProfileSplash.png",
+    "Matches": []
+  },
+  {
+    "UserID": 0,
+    "UserName": "Henrik",
+    "UserPlayerID": 3,
+    "Password": "AQAAAAIAAYagAAAAEBKlsBn9tHKQIkAN6Rw9Aw/xv8W5fnfRB8iFL\u002BpxzMoY3jo\u002BakklBfAo0\u002BUBEQztiQ==",
+    "ProfileSplash": "HenrikProfileSplash.png",
+    "Matches": []
+  },
+  {
+    "UserID": 0,
+    "UserName": "Mikkel",
+    "UserPlayerID": 4,
+    "Password": "AQAAAAIAAYagAAAAEM3fYFycPejidPwgenUufJrJC99tpTYe6HWvOtFr2E\u002BHxfXtpNSaen8uRRpsengKog==",
+    "ProfileSplash": "MikkelProfileSplash.jpg",
+    "Matches": []
+  },
+  {
+    "UserID": 0,
+    "UserName": "Censor",
+    "UserPlayerID": 5,
+    "Password": "AQAAAAIAAYagAAAAEO0YCUldHqta\u002BXJxLaZ5Nmv9EbFNIy9Q\u002BGTjn94nkGfVtWdv1GrH5n/VqcPL3HaKEQ==",
+    "ProfileSplash": "CensorProfileSplash.png",
+    "Matches": []
+  }
+]

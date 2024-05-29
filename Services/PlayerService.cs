@@ -10,21 +10,30 @@ namespace LolTrack.Services
 	{
 		private List<Player> _players;
 		private List<Match> _matches;
-		private DbService _dbService; 
+        private JsonFileService<Player> _fileService;
+        private JsonFileService<Match> _mfileService;
+        private DbService _dbService; 
 
-		public PlayerService(DbService dbService)
-		{
-			_matches = MockMatch.GetMockMatches();
-			_players = MockPlayer.GetMockPlayer();
-			_dbService = dbService;
-			//_dbService.SavePlayers(_players);
-			//_players = _dbService.GetPlayers().Result;
-		}
+        public PlayerService(DbService dbService, JsonFileService<Player> fileService, JsonFileService<Match> mfileService)
+        {
+            //_matches = MockMatch.GetMockMatches();
+            //_players = MockPlayer.GetMockPlayer();
+            _dbService = dbService;
+            //_dbService.SavePlayers(_players);
+            _fileService = fileService;
+			_mfileService = mfileService;
+            _players = _fileService.GetJsonObjects().ToList();
+            _matches = _mfileService.GetJsonObjects().ToList();
+            _fileService.SaveJsonObjects(_players);
+            _mfileService.SaveJsonObjects(_matches);
+            //_players = _dbService.GetPlayers().Result;
+        }
 
-		public void AddPlayer(Player player)
+        public void AddPlayer(Player player)
 		{
 			_players.Add(player);
-		}
+            _fileService.SaveJsonObjects(_players);
+        }
 		public Player GetPlayer(int id)
 		{
 			foreach (Player player in _players)
@@ -53,7 +62,8 @@ namespace LolTrack.Services
 						p.PlayerName = player.PlayerName;
 					}
 				}
-			}
+                _fileService.SaveJsonObjects(_players);
+            }
 		}
 		public Player DeletePlayer(int? playerId)
 		{
@@ -69,7 +79,8 @@ namespace LolTrack.Services
 			if (playerToBeDeleted != null)
 			{
 				_players.Remove(playerToBeDeleted);
-			}
+                _fileService.SaveJsonObjects(_players);
+            }
 			return playerToBeDeleted;
 		}
 

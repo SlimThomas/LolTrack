@@ -8,6 +8,14 @@
         <label asp-for="@Model.Match.MatchID" class="control-label"></label>
         <input asp-for="@Model.Match.MatchID" class="form-control" />
     </div>
+        <div class="form-group">
+        <label asp-for="@Model.Match.PlayerMatchID" class="control-label"></label>
+        <input asp-for="@Model.Match.PlayerMatchID" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Match.UserMatchID" class="control-label"></label>
+        <input asp-for="@Model.Match.UserMatchID" class="form-control" />
+    </div>
     <div class="form-group">
         <label asp-for="@Model.Match.Win" class="control-label"></label>
         <input asp-for="@Model.Match.Win" class="control-label" />
@@ -35,10 +43,6 @@
     <div class="form-group">
         <label asp-for="@Model.Match.LaneType" class="control-label"></label>
         <input asp-for="@Model.Match.LaneType" class="control-label" />
-    </div>
-    <div class="form-group">
-        <label asp-for="@Model.Match.Items" class="control-label"></label>
-        <input asp-for="@Model.Match.Items" class="control-label" />
     </div>
     <div class="form-group">
         <label asp-for="@Model.Match.Champions" class="control-label"></label>

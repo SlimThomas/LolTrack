@@ -1,18 +1,23 @@
 ﻿using LolTrack.MockData;
 using LolTrack.Models;
+using System.Text;
 
 namespace LolTrack.Services
 {
     public class SSpellService
     {
         private List<SSpell> _SSpells;
+        private JsonFileService<SSpell> _fileService;
         private DbService _dbService;
 
-        public SSpellService(DbService dbService)
+        public SSpellService(DbService dbService, JsonFileService<SSpell> fileService)
         {
-            _SSpells = MockSSpell.GetMockSSpells();
+            //_SSpells = MockSSpell.GetMockSSpells();
             _dbService = dbService;
             //_dbService.SaveSSpels(_SSpells);
+            _fileService = fileService;
+            _SSpells = _fileService.GetJsonObjects().ToList();
+            _fileService.SaveJsonObjects(_SSpells);
             //_SSpells = _dbService.GetSspells().Result;
         }
 
@@ -35,6 +40,7 @@ namespace LolTrack.Services
         public void AddSSpell(SSpell sspell)
         {
             _SSpells.Add(sspell);
+            _fileService.SaveJsonObjects(_SSpells);
         }
 
         public void UpdateSSpell (SSpell sspell)
@@ -49,6 +55,7 @@ namespace LolTrack.Services
                         s.SpellType = sspell.SpellType;
                     }
                 }
+                _fileService.SaveJsonObjects(_SSpells);
             }
         }
 
@@ -65,6 +72,7 @@ namespace LolTrack.Services
             if (spellTobeDeleted != null)
             {
                 _SSpells.Remove(spellTobeDeleted);
+                _fileService.SaveJsonObjects(_SSpells);
             }
             return spellTobeDeleted; 
         }

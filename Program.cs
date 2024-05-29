@@ -1,5 +1,6 @@
 
 using LolTrack.EFDBContext;
+using LolTrack.Models;
 using LolTrack.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,14 @@ builder.Services.AddSingleton<MatchService, MatchService>();
 builder.Services.AddSingleton<AbilityService, AbilityService>();
 builder.Services.AddDbContext<LolDbContext>();
 builder.Services.AddSingleton<DbService, DbService>();
+builder.Services.AddTransient < JsonFileService<Ability>>();
+builder.Services.AddTransient < JsonFileService<Champion>>();
+builder.Services.AddTransient < JsonFileService<Item>>();
+builder.Services.AddTransient < JsonFileService<Match>>();
+builder.Services.AddTransient < JsonFileService<Player>>();
+builder.Services.AddTransient < JsonFileService<Rune>>();
+builder.Services.AddTransient < JsonFileService<SSpell>>();
+builder.Services.AddTransient < JsonFileService<User>>();
 
 
 builder.Services.Configure<CookiePolicyOptions>(options => {

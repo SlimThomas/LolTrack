@@ -69,12 +69,7 @@ namespace LolTrack.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("abilityAbiID")
-                        .HasColumnType("int");
-
                     b.HasKey("ChampionID");
-
-                    b.HasIndex("abilityAbiID");
 
                     b.ToTable("Champions");
                 });
@@ -256,17 +251,6 @@ namespace LolTrack.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("LolTrack.Models.Champion", b =>
-                {
-                    b.HasOne("LolTrack.Models.Ability", "ability")
-                        .WithMany()
-                        .HasForeignKey("abilityAbiID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ability");
                 });
 
             modelBuilder.Entity("LolTrack.Models.Match", b =>

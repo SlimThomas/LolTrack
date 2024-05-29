@@ -7,19 +7,25 @@ namespace LolTrack.Services
 	public class ChampService
 	{
 		private List<Champion> _champions;
-		private DbService _dbService;
+        private JsonFileService<Champion> _fileService;
+        private DbService _dbService;
 
-		public ChampService(DbService dbService)
+		public ChampService(DbService dbService, JsonFileService<Champion> fileService)
 		{
-			_champions = MockChamp.GetMockChamps();
+			//_champions = MockChamp.GetMockChamps();
 			_dbService = dbService;
 			//_dbService.SaveChampions(_champions);
-			//_champions = _dbService.GetChampions().Result; 
-		}
+			_fileService = fileService;
+            _champions = _fileService.GetJsonObjects().ToList();
+            _fileService.SaveJsonObjects(_champions);
+            //_champions = _dbService.GetChampions().Result; 
+        }
 		public void AddChamp(Champion champ)
 		{
 			_champions.Add(champ);
-		}
+            _fileService.SaveJsonObjects(_champions);
+            _dbService.AddChampion(champ);
+        }
 		public Champion GetChampion(int id)
 		{
 			foreach (Champion champ in _champions)
@@ -40,7 +46,9 @@ namespace LolTrack.Services
 						c.ChampName = champ.ChampName;
 					}
 				}
-			}
+                _fileService.SaveJsonObjects(_champions);
+                _dbService.SaveChampions(_champions);
+            }
 		}
 		public Champion DeleteChamp(int? champid)
 		{
@@ -56,8 +64,10 @@ namespace LolTrack.Services
 			if (champToBeDeleted != null)
 			{
 				_champions.Remove(champToBeDeleted);
-			}
-			return champToBeDeleted;
+                _fileService.SaveJsonObjects(_champions);
+                _dbService.SaveChampions(_champions);
+            }
+            return champToBeDeleted;
 		}
 		public List<Champion> GetChampions()
 		{

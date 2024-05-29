@@ -40,21 +40,13 @@ namespace LolTrack.Pages.CRUDChamp
         {
             return Page();
         }
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            //if (Splash != null)
-            //{
-            //    if (champion.ChampSplash != null)
-            //    {
-            //        string filePath = Path.Combine(webHostEnvironment.WebRootPath, "/Images", champion.ChampSplash);
-            //        System.IO.File.Delete(filePath);
-            //    }
-            //    champion.ChampSplash = ProcessUploadedFile();
-            //}
+
             _champservice.AddChamp(champion);
             return RedirectToPage("GetAllChamps");
         }

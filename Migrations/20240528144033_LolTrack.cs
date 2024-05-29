@@ -26,6 +26,21 @@ namespace LolTrack.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Champions",
+                columns: table => new
+                {
+                    ChampionID = table.Column<int>(type: "int", nullable: false),
+                    ChampName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ChampDesc = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Difficulty = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ChampSplash = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Champions", x => x.ChampionID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Items",
                 columns: table => new
                 {
@@ -101,28 +116,6 @@ namespace LolTrack.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Champions",
-                columns: table => new
-                {
-                    ChampionID = table.Column<int>(type: "int", nullable: false),
-                    ChampName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ChampDesc = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Difficulty = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ChampSplash = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    abilityAbiID = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Champions", x => x.ChampionID);
-                    table.ForeignKey(
-                        name: "FK_Champions_Abilities_abilityAbiID",
-                        column: x => x.abilityAbiID,
-                        principalTable: "Abilities",
-                        principalColumn: "AbiID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Matches",
                 columns: table => new
                 {
@@ -153,11 +146,6 @@ namespace LolTrack.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Champions_abilityAbiID",
-                table: "Champions",
-                column: "abilityAbiID");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Matches_UserID",
                 table: "Matches",
                 column: "UserID");
@@ -166,6 +154,9 @@ namespace LolTrack.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Abilities");
+
             migrationBuilder.DropTable(
                 name: "Champions");
 
@@ -183,9 +174,6 @@ namespace LolTrack.Migrations
 
             migrationBuilder.DropTable(
                 name: "SSpells");
-
-            migrationBuilder.DropTable(
-                name: "Abilities");
 
             migrationBuilder.DropTable(
                 name: "Users");

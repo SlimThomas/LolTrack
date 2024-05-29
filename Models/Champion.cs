@@ -11,7 +11,8 @@ namespace LolTrack.Models
 
         [Required]
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)] public int ChampionID { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)] 
+		public int ChampionID { get; set; }
         public string ChampName { get; set; }
 		[Required]
         public string ChampDesc { get; set; }
@@ -20,7 +21,6 @@ namespace LolTrack.Models
 
         public string ChampSplash { get; set; }
 
-        public Ability ability { get; set; }
 
         public Champion(int championID, string name, string desc, string difficulty, string splash)
 		{

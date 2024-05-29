@@ -5,13 +5,17 @@ namespace LolTrack.Services
 {
 	public class ItemService
 	{
-		private DbService _dbService; 
-		private List<Item> _items;
-		public ItemService(DbService dbService)
+		private DbService _dbService;
+        private JsonFileService<Item> _fileService;
+        private List<Item> _items;
+		public ItemService(DbService dbService, JsonFileService<Item> fileService)
 		{
 			_items = MockItem.GetMockItems();
 			_dbService = dbService;
-			//_dbService.SaveItems(_items); 
+			_fileService = fileService;
+            //_items = _fileService.GetJsonObjects().ToList();
+            _fileService.SaveJsonObjects(_items);
+            //_dbService.SaveItems(_items);
 			//_items = _dbService.GetItems().Result;
 
 
@@ -19,9 +23,8 @@ namespace LolTrack.Services
 		public void Add(Item item)
 		{
 			_items.Add(item);
-           
-
-		}
+            _fileService.SaveJsonObjects(_items);
+        }
 		public Item GetItem(int id)
 		{
 			foreach (Item item in _items)
@@ -43,7 +46,8 @@ namespace LolTrack.Services
 						i.ItemValue = item.ItemValue;
 					}
 				}
-			}
+                _fileService.SaveJsonObjects(_items);
+            }
 		}
 		public Item DeleteItem(int? itemid)
 		{
@@ -59,7 +63,8 @@ namespace LolTrack.Services
 			if (itemToBeDeleted != null)
 			{
 				_items.Remove(itemToBeDeleted);
-			}
+                _fileService.SaveJsonObjects(_items);
+            }
 			return itemToBeDeleted;
 		}
 

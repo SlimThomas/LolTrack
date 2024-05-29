@@ -7,11 +7,7 @@ namespace LolTrack.EFDBContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer(@"Data Source = mysql24.unoeuro.com; 
-                Initial Catalog = LolDb; 
-                Integrated security = True; 
-                Connect Timeout=30;
-                Encrypt=False");
+            options.UseSqlServer(@"Data Source=mssql11.unoeuro.com;User ID=mvstm_dk;Password=btpykdac5GHBrm4fFg6A;Connect Timeout=30;Encrypt=False;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False") ;
         }
 
         public DbSet<Ability> Abilities { get; set; }

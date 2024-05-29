@@ -1,0 +1,52 @@
+[
+  {
+    "PlayerID": 1,
+    "PlayerName": "Murt",
+    "TotalWins": 0,
+    "WinPerC": 0,
+    "KDA": 0,
+    "TotalMatch": 0,
+    "TotalLosses": 0,
+    "AvgVision": 0
+  },
+  {
+    "PlayerID": 2,
+    "PlayerName": "SlimThomas",
+    "TotalWins": 0,
+    "WinPerC": 0,
+    "KDA": 0,
+    "TotalMatch": 0,
+    "TotalLosses": 0,
+    "AvgVision": 0
+  },
+  {
+    "PlayerID": 3,
+    "PlayerName": "Mikkel",
+    "TotalWins": 0,
+    "WinPerC": 0,
+    "KDA": 0,
+    "TotalMatch": 0,
+    "TotalLosses": 0,
+    "AvgVision": 0
+  },
+  {
+    "PlayerID": 4,
+    "PlayerName": "Henrik",
+    "TotalWins": 0,
+    "WinPerC": 0,
+    "KDA": 0,
+    "TotalMatch": 0,
+    "TotalLosses": 0,
+    "AvgVision": 0
+  },
+  {
+    "PlayerID": 5,
+    "PlayerName": "Censor",
+    "TotalWins": 0,
+    "WinPerC": 0,
+    "KDA": 0,
+    "TotalMatch": 0,
+    "TotalLosses": 0,
+    "AvgVision": 0
+  }
+]

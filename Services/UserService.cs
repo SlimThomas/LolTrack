@@ -7,20 +7,25 @@ namespace LolTrack.Services
     public class UserService
     {
         public List<User> _users { get; }
+        private JsonFileService<User> _fileService;
         private DbService _dbService; 
 
-        public UserService(DbService dbService)
+        public UserService(DbService dbService, JsonFileService<User> fileService)
         {
-            _users = MockUser.GetMockUser();
+            //_users = MockUser.GetMockUser();
             _dbService = dbService;
             //_dbService.SaveUsers(_users);
+            _fileService = fileService;
+            _users = _fileService.GetJsonObjects().ToList();
+            _fileService.SaveJsonObjects(_users);
             //_users = _dbService.GetUsers().Result;
 
         }
 
         public async Task AddUserAsync (User user)
         {
-            _users.Add(user); 
+            _users.Add(user);
+            _fileService.SaveJsonObjects(_users);
         }
 
         public User GetUserByUsername (string username)

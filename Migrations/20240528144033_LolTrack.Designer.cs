@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LolTrack.Migrations
 {
     [DbContext(typeof(LolDbContext))]
-    [Migration("20240528102512_LolTrack")]
+    [Migration("20240528144033_LolTrack")]
     partial class LolTrack
     {
         /// <inheritdoc />
@@ -72,12 +72,7 @@ namespace LolTrack.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("abilityAbiID")
-                        .HasColumnType("int");
-
                     b.HasKey("ChampionID");
-
-                    b.HasIndex("abilityAbiID");
 
                     b.ToTable("Champions");
                 });
@@ -259,17 +254,6 @@ namespace LolTrack.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("LolTrack.Models.Champion", b =>
-                {
-                    b.HasOne("LolTrack.Models.Ability", "ability")
-                        .WithMany()
-                        .HasForeignKey("abilityAbiID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("ability");
                 });
 
             modelBuilder.Entity("LolTrack.Models.Match", b =>

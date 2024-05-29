@@ -6,19 +6,24 @@ namespace LolTrack.Services
     public class RuneService
     {
         private List<Rune> _runes;
+        private JsonFileService<Rune> _fileService;
         private DbService _dbService; 
 
-        public RuneService(DbService dbService) 
+        public RuneService(DbService dbService, JsonFileService<Rune> fileService)
         {
             _runes = MockRunes.GetMockRunes();
             _dbService = dbService;
             //_dbService.SaveRunes(_runes);
+            _fileService = fileService;
+            //_runes = _fileService.GetJsonObjects().ToList();
+            _fileService.SaveJsonObjects(_runes);
             //_runes = _dbService.GetRunes().Result;
         }
 
         public void AddRunes(Rune rune)
         {
             _runes.Add(rune);
+            _fileService.SaveJsonObjects(_runes);
         }
 
         public void UpdateRune(Rune rune)
@@ -34,6 +39,7 @@ namespace LolTrack.Services
                         r.RunePageName = rune.RunePageName;
                     }
                 }
+                _fileService.SaveJsonObjects(_runes);
             }
         }
         public List<Rune> GetRunes()
@@ -67,7 +73,8 @@ namespace LolTrack.Services
             }
             if (runeToBeDeleted != null)
             {
-                _runes.Remove(runeToBeDeleted); 
+                _runes.Remove(runeToBeDeleted);
+                _fileService.SaveJsonObjects(_runes);
             }
             return runeToBeDeleted; 
         }

@@ -10,7 +10,7 @@ namespace LolTrack.MockData
         {
             new Match(1,1, 1, false, 2, 4, 2, 2, 20, "Top", "Ksante", "Teleport", 202),
             new Match(2,1, 1, true, 10, 2, 20, 15, 40, "Jungle", "Renekton", "Heal", 300),
-            new Match(3,3, 3, false, 0, 20, 0, 0, 10, "Top", "Ksante", "Teleport", 10),
+            new Match(3,1, 1, false, 0, 20, 0, 0, 10, "Top", "Ksante", "Teleport", 10),
             new Match(4,2, 2, true, 10, 5, 20, 6, 20, "Bottom", "Aatrox",  "Heal", 260),
             new Match(5,2, 2, false, 0, 3, 10, 3.33, 10, "Top",  "Teemo", "Teleport", 100),
             new Match(6,2, 2, true, 33, 20, 10, 2.10, 25, "Middle", "Diana", "Flash", 250),
