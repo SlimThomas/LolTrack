@@ -18,15 +18,16 @@ namespace LolTrack.Services
         {
             //_matches = MockMatch.GetMockMatches();
             //_players = MockPlayer.GetMockPlayer();
-            _dbService = dbService;
-            //_dbService.SavePlayers(_players);
             _fileService = fileService;
-			_mfileService = mfileService;
-            _players = _fileService.GetJsonObjects().ToList();
+            _mfileService = mfileService;
+            _dbService = dbService;
+            //_players = _fileService.GetJsonObjects().ToList();
             _matches = _mfileService.GetJsonObjects().ToList();
-            _fileService.SaveJsonObjects(_players);
-            _mfileService.SaveJsonObjects(_matches);
-            //_players = _dbService.GetPlayers().Result;
+            //_fileService.SaveJsonObjects(_players);
+            //_mfileService.SaveJsonObjects(_matches);
+            _players = _dbService.GetPlayers().Result;
+            _dbService.SavePlayers(_players);
+            //_dbService.SaveMatches(_matches);
         }
 
         public void AddPlayer(Player player)
@@ -88,8 +89,48 @@ namespace LolTrack.Services
 		{
 			return _players;
 		}
+        //public List<Match> GetMatches()
+        //{
+        //    return _matches;
+        //}
 
-		public IEnumerable<Player> PlayerSearch(string str)
+        //public void AddMatch(Match match)
+        //{
+        //    _matches.Add(match);
+        //    _mfileService.SaveJsonObjects(_matches);
+        //}
+
+        //// vi ville have en update metode, til hvis vi kom til at create forkert - men i det endelige produkt, ville en update funktion ikke være nødvendig
+
+        //public Match GetMatch(int id)
+        //{
+        //    foreach (Match match in _matches)
+        //    {
+        //        if (match.MatchID == id) return match;
+        //    }
+        //    return null;
+        //}
+
+        //public Match DeleteMatch(int? id)
+        //{
+        //    Match matchTobeDeleted = null;
+        //    foreach (Match match in _matches)
+        //    {
+        //        if (match.MatchID == id)
+        //        {
+        //            matchTobeDeleted = match;
+        //            break;
+        //        }
+        //    }
+        //    if (matchTobeDeleted != null)
+        //    {
+        //        _matches.Remove(matchTobeDeleted);
+        //        _mfileService.SaveJsonObjects(_matches);
+        //    }
+        //    return matchTobeDeleted;
+        //}
+
+        public IEnumerable<Player> PlayerSearch(string str)
 		{
 			//if(str == null)
 			//{

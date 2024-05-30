@@ -13,12 +13,13 @@ namespace LolTrack.Services
         public UserService(DbService dbService, JsonFileService<User> fileService)
         {
             //_users = MockUser.GetMockUser();
-            _dbService = dbService;
-            //_dbService.SaveUsers(_users);
+
             _fileService = fileService;
             _users = _fileService.GetJsonObjects().ToList();
-            _fileService.SaveJsonObjects(_users);
+            _dbService = dbService;
+            //_fileService.SaveJsonObjects(_users);
             //_users = _dbService.GetUsers().Result;
+            _dbService.SaveUsers(_users);
 
         }
 

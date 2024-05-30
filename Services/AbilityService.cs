@@ -14,11 +14,11 @@ namespace LolTrack.Services
         {
             //_abilities = MockAbility.GetMockAbilities();
             _dbService = dbService;
-            //_dbService.SaveAbilities(_abilities);
             _fileService = fileService;
-            _abilities = _fileService.GetJsonObjects().ToList();
-            _fileService.SaveJsonObjects(_abilities);
-            //_abilities = _dbService.GetAbilities().Result;
+            //_abilities = _fileService.GetJsonObjects().ToList();
+            //_fileService.SaveJsonObjects(_abilities);
+            _abilities = _dbService.GetAbilities().Result;
+            _dbService.SaveAbilities(_abilities);
 
         }
         public void AddAbility(Ability abi)

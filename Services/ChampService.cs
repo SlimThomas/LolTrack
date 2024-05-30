@@ -13,12 +13,12 @@ namespace LolTrack.Services
 		public ChampService(DbService dbService, JsonFileService<Champion> fileService)
 		{
 			//_champions = MockChamp.GetMockChamps();
-			_dbService = dbService;
-			//_dbService.SaveChampions(_champions);
 			_fileService = fileService;
-            _champions = _fileService.GetJsonObjects().ToList();
-            _fileService.SaveJsonObjects(_champions);
-            //_champions = _dbService.GetChampions().Result; 
+            //_champions = _fileService.GetJsonObjects().ToList();
+            _dbService = dbService;
+            //_fileService.SaveJsonObjects(_champions);
+            _champions = _dbService.GetChampions().Result;
+            _dbService.SaveChampions(_champions);
         }
 		public void AddChamp(Champion champ)
 		{

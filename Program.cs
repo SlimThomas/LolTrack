@@ -19,7 +19,7 @@ builder.Services.AddSingleton<PlayerService, PlayerService>();
 builder.Services.AddSingleton<MatchService, MatchService>();
 builder.Services.AddSingleton<AbilityService, AbilityService>();
 builder.Services.AddDbContext<LolDbContext>();
-builder.Services.AddSingleton<DbService, DbService>();
+builder.Services.AddTransient<DbService>();
 builder.Services.AddTransient < JsonFileService<Ability>>();
 builder.Services.AddTransient < JsonFileService<Champion>>();
 builder.Services.AddTransient < JsonFileService<Item>>();

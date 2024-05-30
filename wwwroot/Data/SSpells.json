@@ -1,0 +1,50 @@
+[
+  {
+    "SSpellID": 1,
+    "SpellType": 0,
+    "SpellDesc": "Flash is a location-targeted summoner spell that causes your champion to blink to the location in range of your cursor.",
+    "SSpellSplash": "Flash_HD.jpg"
+  },
+  {
+    "SSpellID": 2,
+    "SpellType": 1,
+    "SpellDesc": "Ignite is a unit-targeted summoner spell that burns an enemy champion for a few seconds, dealing periodic true damage, applying healing reduction, and revealing the target over the duration.",
+    "SSpellSplash": "Ignite_HD.jpg"
+  },
+  {
+    "SSpellID": 3,
+    "SpellType": 2,
+    "SpellDesc": "Teleport is a unit-targeted summoner spell that blinks your champion to the target allied unit after a few seconds of channeling.",
+    "SSpellSplash": "Teleport_HD.jpg"
+  },
+  {
+    "SSpellID": 4,
+    "SpellType": 3,
+    "SpellDesc": "Heal is an auto-targeted summoner spell that instantly restores health to your champion and an ally while also granting a small burst of movement speed.",
+    "SSpellSplash": "Heal_HD.jpg"
+  },
+  {
+    "SSpellID": 5,
+    "SpellType": 4,
+    "SpellDesc": "Ghost is a self-targeted summoner spell that increases your champion\u0027s movement speed and grants them the ability to ignore unit collision for a few seconds.",
+    "SSpellSplash": "Ghost_HD.jpg"
+  },
+  {
+    "SSpellID": 6,
+    "SpellType": 5,
+    "SpellDesc": "Barrier is a self-targeted summoner spell that shields your champion from damage for a few seconds.",
+    "SSpellSplash": "Barrier_HD.jpg"
+  },
+  {
+    "SSpellID": 7,
+    "SpellType": 6,
+    "SpellDesc": "Exhaust is a unit-targeted summoner spell that slows an enemy champion\u0027s movement speed and reduces their damage dealt for a few seconds.",
+    "SSpellSplash": "Exhaust_HD.jpg"
+  },
+  {
+    "SSpellID": 8,
+    "SpellType": 7,
+    "SpellDesc": "Smite is a unit-targeted summoner spell that deals true damage to the target large or medium monster, enemy minion, or pet.",
+    "SSpellSplash": "Smite_HD.jpg"
+  }
+]

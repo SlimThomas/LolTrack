@@ -12,11 +12,12 @@ namespace LolTrack.Services
 
         public SSpellService(DbService dbService, JsonFileService<SSpell> fileService)
         {
-            //_SSpells = MockSSpell.GetMockSSpells();
-            _dbService = dbService;
-            //_dbService.SaveSSpels(_SSpells);
+            _SSpells = MockSSpell.GetMockSSpells();
+
             _fileService = fileService;
-            _SSpells = _fileService.GetJsonObjects().ToList();
+            //_SSpells = _fileService.GetJsonObjects().ToList();
+            _dbService = dbService;
+            _dbService.SaveSSpels(_SSpells);
             _fileService.SaveJsonObjects(_SSpells);
             //_SSpells = _dbService.GetSspells().Result;
         }

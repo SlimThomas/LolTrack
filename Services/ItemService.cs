@@ -14,8 +14,8 @@ namespace LolTrack.Services
 			_dbService = dbService;
 			_fileService = fileService;
             //_items = _fileService.GetJsonObjects().ToList();
-            _fileService.SaveJsonObjects(_items);
-            //_dbService.SaveItems(_items);
+            //_fileService.SaveJsonObjects(_items);
+            _dbService.SaveItems(_items);
 			//_items = _dbService.GetItems().Result;
 
 

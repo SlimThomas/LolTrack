@@ -8,6 +8,7 @@ namespace LolTrack.Pages
     public class IndexModel : PageModel
     {
         private PlayerService _playerService;
+        private MatchService _matchService;
         private readonly ILogger<IndexModel> _logger;
         [BindProperty]
         public string SearchStr { get; set; }

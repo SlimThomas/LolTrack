@@ -11,12 +11,12 @@ namespace LolTrack.Services
 
         public RuneService(DbService dbService, JsonFileService<Rune> fileService)
         {
-            _runes = MockRunes.GetMockRunes();
+            //_runes = MockRunes.GetMockRunes();
             _dbService = dbService;
-            //_dbService.SaveRunes(_runes);
+            _dbService.SaveRunes(_runes);
             _fileService = fileService;
-            //_runes = _fileService.GetJsonObjects().ToList();
-            _fileService.SaveJsonObjects(_runes);
+            _runes = _fileService.GetJsonObjects().ToList();
+            //_fileService.SaveJsonObjects(_runes);
             //_runes = _dbService.GetRunes().Result;
         }
 

@@ -15,12 +15,13 @@ namespace LolTrack.Services
         public MatchService(DbService dbService, JsonFileService<Match> fileService)
         {
             //_matches = MockMatch.GetMockMatches();
-            _dbService = dbService;
-            //_dbService.SaveMatches(_matches);
             _fileService = fileService;
             _matches = _fileService.GetJsonObjects().ToList();
-            _fileService.SaveJsonObjects(_matches);
+            _dbService = dbService;
             //_matches = _dbService.GetMatches().Result;
+            _dbService.SaveMatches(_matches);
+            //_fileService.SaveJsonObjects(_matches);
+            
         }
 
       

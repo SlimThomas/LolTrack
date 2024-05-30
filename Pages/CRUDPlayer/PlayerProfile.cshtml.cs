@@ -23,7 +23,6 @@ namespace LolTrack.Pages.CRUDPlayer
         public string SearchStr { get; set; }
         public IActionResult OnGet(int id)
         {
-            PlayerList = _playerService.GetPlayers();
             matches = _matchService.GetMatches();
             player = _playerService.GetPlayer(id);
             player.TotalMatch = _playerService.MCount(player);
