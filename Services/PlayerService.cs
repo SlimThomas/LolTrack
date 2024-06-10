@@ -1,6 +1,7 @@
 ﻿using LolTrack.MockData;
 using LolTrack.Models;
 using Microsoft.AspNetCore.Mvc.Formatters.Xml;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using System.Numerics;
 using System.Security.Cryptography.X509Certificates;
 
@@ -203,6 +204,7 @@ namespace LolTrack.Services
 				if (m.PlayerMatchID == p.PlayerID)
 				{
 					double WP = Convert.ToDouble(TotalW(p)) / p.TotalMatch;
+					WP = Math.Round(WP,2);
 					p.WinPerC = WP;
 				}
 			}
@@ -221,6 +223,7 @@ namespace LolTrack.Services
 							 where ma.PlayerMatchID == p.PlayerID
                              select ma.Assists;
 					kda = Convert.ToDouble((kQ.Sum() + aQ.Sum())) / Convert.ToDouble(dQ.Sum());
+			kda = Math.Round(kda,2);
 			return kda;
 		}
         public double AVGVi(Player p)
@@ -230,6 +233,7 @@ namespace LolTrack.Services
 								 where ma.PlayerMatchID == p.PlayerID
                                  select ma.Visionscore;
                         aVS = Convert.ToDouble(VS.Sum()) / Convert.ToDouble(_matches.Count());
+			aVS = Math.Round(aVS,2);
             return aVS;
         }
     }

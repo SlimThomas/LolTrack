@@ -17,17 +17,14 @@ namespace LolTrack.Models
 		[Required]
         public int TotalWins { get; set; }
 		[Required]
-        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double WinPerC { get; set; }
 		[Required]
-        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double KDA { get; set; }
 		[Required]
         public int TotalMatch { get; set; }
 		[Required]
         public int TotalLosses { get; set; }
 		[Required]
-        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double AvgVision { get; set; }
 
 		public Player(int playerID, string playerName)
