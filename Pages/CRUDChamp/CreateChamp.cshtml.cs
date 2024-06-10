@@ -17,24 +17,6 @@ namespace LolTrack.Pages.CRUDChamp
         }
         [BindProperty]
         public Models.Champion champion { get; set; }
-        //[BindProperty]
-        //public IFormFile? Splash { get; set; }
-        //private string ProcessUploadedFile()
-        //{
-        //    string uniqueFileName = null;
-        //    if (Splash != null)
-        //    {
-        //        string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "Images");
-        //        uniqueFileName = Guid.NewGuid().ToString() + "_" + Splash.FileName;
-
-        //        string filePath = Path .Combine(uploadsFolder, uniqueFileName);
-
-        //        using (var fileStream = new FileStream(filePath, FileMode.Create)
-        //        {
-        //            Splash.CopyTo(fileStream)
-        //        }
-        //    }
-        //}
 
         public IActionResult OnGet()
         {
