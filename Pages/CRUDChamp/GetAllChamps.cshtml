@@ -52,6 +52,7 @@
                         <div class="splashcontainer">
                             <img src="/Images/@champs.ChampSplash" alt="Avatar" class="splash" style="width: 100%">
                             <div class="splashmiddle">
+                                    <a class="btn btn-danger btn-sm " type="button" title="Delete" asp-page="RemoveChamp" asp-route-id="@champs.ChampionID"><i class="fa fa-trash"></i></a>
                                 <a class="backbtn" type="button" title="Detail" asp-page="ChampDetail" asp-route-id="@champs.ChampionID">@champs.ChampName</a>
                             </div>
                         </div>

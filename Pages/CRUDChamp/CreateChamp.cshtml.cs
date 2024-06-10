@@ -16,7 +16,7 @@ namespace LolTrack.Pages.CRUDChamp
             _champservice = champservice;
         }
         [BindProperty]
-        public Models.Champion champion { get; set; }
+        public Champion champion { get; set; }
 
         public IActionResult OnGet()
         {

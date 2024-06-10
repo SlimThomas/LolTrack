@@ -14,17 +14,17 @@ namespace LolTrack.Services
 		{
 			//_champions = MockChamp.GetMockChamps();
 			_fileService = fileService;
-            //_champions = _fileService.GetJsonObjects().ToList();
+            _champions = _fileService.GetJsonObjects().ToList();
             _dbService = dbService;
             //_fileService.SaveJsonObjects(_champions);
-            _champions = _dbService.GetChampions().Result;
+            //_champions = _dbService.GetChampions().Result;
             _dbService.SaveChampions(_champions);
         }
 		public void AddChamp(Champion champ)
 		{
 			_champions.Add(champ);
             _fileService.SaveJsonObjects(_champions);
-            _dbService.AddChampion(champ);
+            //_dbService.AddChampion(champ);
         }
 		public Champion GetChampion(int id)
 		{
@@ -65,7 +65,7 @@ namespace LolTrack.Services
 			{
 				_champions.Remove(champToBeDeleted);
                 _fileService.SaveJsonObjects(_champions);
-                _dbService.SaveChampions(_champions);
+                //_dbService.SaveChampions(_champions);
             }
             return champToBeDeleted;
 		}
